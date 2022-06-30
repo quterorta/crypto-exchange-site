@@ -1,0 +1,96 @@
+/*font-family: 'Montserrat', sans-serif;*/
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+/*font-family: 'Raleway', sans-serif;*/
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+/*font-family: 'Bungee', cursive;*/
+@import url('https://fonts.googleapis.com/css2?family=Bungee&display=swap');
+
+
+
+* {
+    transition: all 0.15s ease;
+}
+
+.gb-2, .gb-3, .gb-4, .gb-5 {
+    display: grid;
+    align-items: center;
+}
+.gb-2 {
+    grid-template-columns: repeat(2, 1fr);
+}
+.gb-3 {
+    grid-template-columns: repeat(3, 1fr);
+}
+.gb-4 {
+    grid-template-columns: repeat(4, 1fr);
+}
+.gb-5 {
+    grid-template-columns: repeat(5, 1fr);
+}
+
+/*** Padding TOP and BOTTOM ***/
+
+.ptb1 {
+    padding-top: 1%;
+    padding-bottom: 1%;
+}
+
+.ptb5 {
+    padding-top: 5%;
+    padding-bottom: 5%;
+}
+
+.block-ptb-5 {
+    padding-top: 5%;
+    padding-bottom: 5%;
+}
+
+/*** END Padding TOP and BOTTOM ***/
+
+
+/*** Padding LEFT and RIGHT ***/
+
+.plr5 {
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+.plr10 {
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+.plr15 {
+    padding-left: 15%;
+    padding-right: 15%;
+}
+
+.plr20 {
+    padding-left: 20%;
+    padding-right: 20%;
+}
+
+.block-plr-5 {
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+/*** END Padding LEFT and RIGHT ***/
+
+.block_header {
+    display: inline-block;
+    position: relative;
+    font-size: 3.5rem;
+    font-weight: 800;
+    margin-bottom: 2rem;
+    line-height: 1;
+}
+
+@media (max-width: 900px) {
+    .gb-2, .gb-3, .gb-4, .gb-5 {
+        grid-template-columns: 1fr;
+    }
+    .block_header {
+        font-size: 10vw;
+    }
+}

@@ -1,0 +1,563 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    font-family: 'Montserrat', sans-serif;
+}
+
+
+
+.header-top_section {
+    background: #1E1E1F;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem 0;
+}
+
+
+.header-top_section-links_container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.header-top_section-link {
+    color: white;
+    font-size: 0.9vw;
+    font-weight: 400;
+    margin: 0 2rem;
+    text-decoration: none;
+    line-height: 1;
+}
+.header-top_section-link i {
+    margin-right: 7px;
+    color: #54ADFF;
+}
+.header-top_section-link:hover {
+    color: #54ADFF;
+    cursor: pointer;
+}
+
+
+.header-top_section-language_link {
+    color: white;
+    font-size: 0.9vw;
+    font-weight: 600;
+    text-decoration: none;
+    line-height: 1;
+    margin: 0 0.25rem;
+}
+.header-top_section-language_link.active {
+    color: #54ADFF;
+    font-weight: 900;
+    font-size: 1vw;
+}
+.header-top_section-language_link:hover {
+    font-weight: 900;
+    color: white;
+    font-size: 1vw;
+}
+
+
+.header-bottom_section {
+    background: #181C1F;
+    padding: 0.5rem 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+.header-bottom_section-logo img {
+    width: 10vw;
+    margin: 0 2rem;
+}
+
+
+.header-bottom_section-links_container {
+    text-align: center;
+}
+
+.header-bottom_section-link {
+    display: inline-block;
+    margin: 0;
+    padding: 0.5rem 2rem;
+    font-size: 1vw;
+    font-weight: 500;
+    color: #54ADFF;
+    text-decoration: none;
+    height: 100%;
+}
+.header-bottom_section-link:hover {
+    background: #22272C;
+    color: #54ADFF;
+    box-shadow: 0 0.125rem 0 0 #54ADFF;
+}
+
+
+.header-bottom_section-auth_link {
+    display: inline-block;
+    margin: 0;
+    padding: 0.5rem;
+    font-size: 0.75vw;
+    font-weight: 500;
+    color: #54ADFF;
+    text-decoration: none;
+    height: 100%;
+}
+.header-bottom_section-auth_link:hover {
+    color: white;
+    box-shadow: 0 0.125rem 0 0 #54ADFF;
+}
+
+
+
+.main-container {
+    background: #181C1F;
+    min-height: 100vh;
+    padding: 0 10%;
+    position: relative;
+}
+
+
+
+.hint_container {
+    background: #20262A;
+    padding: 1% 5%;
+    margin: 2.5rem 0 0 0;
+    display: inline-block;
+    position: relative;
+    left: 50%;
+    transform: translate(-50%, 0);
+    border-radius: 0.5rem;
+    box-shadow: 0 0 5px 0 rgba(255, 255, 255, 0.1);
+}
+
+.hint {
+    color: white;
+    margin: 0;
+    font-size: 1.25rem;
+    font-weight: 500;
+    text-align: center;
+    display: inline-block;
+}
+
+
+
+.exchange_container {
+    margin-top: 3rem;
+    padding: 1% 2.5%;
+    background: #20262A;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-gap: 2rem;
+    border-radius: 0.75rem;
+    box-shadow: 0 0 10px 0 rgba(255, 255, 255, 0.025);
+}
+
+
+.exchange-pills_container {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+}
+
+
+.exchange-button {
+    display: block;
+    width: 100%;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    margin: 0.5rem 0;
+    text-align: left;
+    padding: 0.5rem 1.5rem;
+    background: none;
+    border-radius: 0.5rem;
+    color: #54ADFF;
+    font-size: 1.25rem;
+    font-weight: 400;
+}
+.exchange-button.active {
+    background: #171C1F;
+    border: 1px solid #54ADFF;
+}
+.exchange-button:hover {
+    border: 1px solid #54ADFF;
+}
+.exchange-button img {
+    width: 3.25rem;
+    height: 3.25rem;
+    object-fit: cover;
+    margin-right: 1rem;
+}
+
+
+.exchange-rate_info-table {
+    width: 100%;
+    border-collapse:separate;
+    border-spacing: 0 0.75rem;
+}
+
+
+.exchange-rate_info-table-header_row {
+    color: #54ADFF;
+    font-weight: 400;
+    font-size: 1.25rem;
+    text-align: center;
+    box-shadow: 0 1px 0 0 #54ADFF;
+    width: 100%;
+}
+
+
+.exchange-rate_info-table-header_give {
+    width: 40%;
+    padding: 0.5rem 0;
+}
+.exchange-rate_info-table-header_rate,
+.exchange-rate_info-table-header_reserve {
+    width: 25%;
+    padding: 0.5rem 0;
+}
+.exchange-rate_info-table-header_button {
+    width: 10%;
+    padding: 0.5rem 0;
+    position: relative;
+}
+
+.exchange-order-button {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    display: block;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    background: none;
+    height: 2rem;
+    width: 2rem;
+    border-radius: 0.25rem;
+}
+.exchange-order-button:hover {
+    border: 1px solid #54ADFF;
+}
+.exchange-order-button:hover .exchange-order-button-text {
+    color: #54ADFF;
+}
+.exchange-order-button-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -40%);
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 500;
+    line-height: 1;
+}
+
+
+.exchange-rate_info {
+    color: white;
+    box-shadow: 0 1px 0 0 rgba(255, 255, 255, 0.2), 0 -1px 0 0 rgba(255, 255, 255, 0.2);
+}
+.exchange-rate_info:hover {
+    color: white;
+    box-shadow: 0 1px 0 0 #54ADFF, 0 -1px 0 0 #54ADFF;
+}
+
+
+.exchange-rate_info-table-item_give {
+    font-size: 1.35rem;
+    font-weight: 400;
+    padding: 0.5rem 0 0.5rem 1.5rem;
+}
+.exchange-rate_info-table-item_give img {
+    width: 3rem;
+    height: 3rem;
+    object-fit: cover;
+    margin-right: 1rem;
+}
+
+
+.exchange-rate_info-table-item_rate,
+.exchange-rate_info-table-item_reserve {
+    font-weight: 400;
+    font-size: 1.1rem;
+    text-align: center;
+}
+
+
+
+.steps_container {
+    background: #20262A;
+    margin-top: 2rem;
+    border-radius: 0.75rem;
+    box-shadow: 0 0 10px 0 rgba(255, 255, 255, 0.05);
+}
+
+
+.steps-header {
+    color: white;
+    text-align: right;
+    line-height: 1;
+}
+
+
+.steps-regular {
+    color: rgba(255, 255, 255, 0.75);
+    margin: 0;
+    font-size: 1.75rem;
+    font-weight: 300;
+}
+
+.steps-regular a {
+    color: rgba(255, 255, 255, 0.75);
+    text-decoration: none;
+    display: inline-block;
+    box-shadow: 0 2px 0 0 #54ADFF;
+}
+.steps-regular a:hover {
+    color: rgba(255, 255, 255, 1);
+    box-shadow: 0 2px 0 0 #FFF;
+}
+
+
+.exchange-rate_info-table-item_button {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 500;
+}
+
+
+.steps-list_container {
+    margin-top: 2rem;
+    padding: 2rem 0.5rem;
+    border-radius: 0.25rem;
+    color: white;
+    background-image: repeating-linear-gradient(to top right, rgba(85, 175, 255, 0.25) 60px, transparent 61px, transparent 75px),
+    repeating-linear-gradient(to bottom right, #000 60px, transparent 61px, transparent 75px);
+}
+
+
+.steps-list_item {
+    position: relative;
+    display: grid;
+    grid-gap: 1rem;
+    align-items: center;
+    margin: 1.5rem 0;
+    width: 50%;
+}
+.steps-list_item:nth-child(odd) {
+    grid-template-columns: 6rem 1fr;
+    left: 100%;
+    transform: translate(-100%, 0);
+}
+.steps-list_item:nth-child(even) {
+    grid-template-columns: 1fr 6rem;
+    text-align: right;
+}
+.steps-list_item:nth-child(even) .steps-list_item-number_container{
+    order: 2;
+}
+
+.steps-list_item-number_container {
+    position: relative;
+    display: block;
+    width: 6rem;
+    height: 6rem;
+    background: #181C1F;
+    border: 2px solid #54ADFF;
+    border-radius: 50%;
+}
+.steps-list_item-number {
+    color: #54ADFF;
+    font-size: 3rem;
+    font-weight: 600;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.steps-list_item-text_container {
+    width: auto;
+}
+.steps-list_item-text_container p {
+    color: #FFF;
+    font-size: 1.8rem;
+    font-weight: 300;
+    margin: 0;
+    line-height: 1;
+}
+
+
+
+.history {
+    margin: 5% 0;
+    color: white !important;
+    grid-gap: 1.5rem;
+}
+
+
+.history-last_exchange_container,
+.history-last_review_container,
+.history-reserve_container {
+    height: 100%;
+    padding: 0 1rem 1rem 1rem;
+    box-shadow: 1px 0 0 0 #54ADFF, -1px 0 0 0 #54ADFF;
+}
+
+
+.history-last_exchange_header,
+.history-last_review_header,
+.history-reserve_header {
+    color: #54ADFF;
+    font-size: 1.25rem;
+    font-weight: 500;
+    margin: 0.25rem 0 2rem 0;
+    text-align: center;
+}
+.history-last_exchange_header i,
+.history-last_review_header i,
+.history-reserve_header i {
+    color: white;
+}
+
+.history-last_exchange_header i:hover,
+.history-last_review_header i:hover,
+.history-reserve_header i:hover {
+    color: #54ADFF;
+}
+
+
+.history-last_exchange-list_item {
+    width: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 1px 0 0 rgba(85, 175, 255, 0.25), 0 -1px 0 0 rgba(85, 175, 255, 0.25);
+    padding: 0.5rem 0;
+    margin: 0.5rem 0;
+}
+
+.history-last_exchange-list_item img {
+    width: 3rem;
+    height: 3rem;
+    object-fit: contain;
+}
+.history-last_exchange-list_item img {
+    margin: 0 1rem;
+}
+
+.history-last_exchange-list_item p {
+    margin: 0;
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 1rem;
+    font-weight: 400;
+    text-align: center;
+}
+.history-last_exchange-list_item p b {
+    color: teal;
+    font-size: 1.1rem;
+    font-weight: 800;
+}
+
+
+.history-last_review-list_item {
+    box-shadow: 0 0 0 1px rgba(85, 175, 255, 0.25);
+    padding: 0.75rem;
+    margin: 0.5rem 0;
+    border-radius: 0.5rem;
+}
+
+
+.history-last_review-list_item-user {
+    color: #54ADFF;
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+.history-last_review-list_item-user i {
+    color: rgba(255, 255, 255, 0.2);
+    font-style: normal;
+    font-size: 0.9rem;
+    font-weight: 300;
+}
+
+.history-last_review-list_item-text {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 1.2rem;
+    font-weight: 400;
+    margin: 0;
+    line-height: 1;
+}
+
+
+.history-reserve-list_item {
+    display: grid;
+    grid-template-columns: 4fr 1fr;
+    grid-gap: 1rem;
+    align-items: center;
+    box-shadow: 0 1px 0 0 rgba(85, 175, 255, 0.25), 0 -1px 0 0 rgba(85, 175, 255, 0.25);
+    padding: 0.5rem 0;
+    margin: 0.5rem 0;
+    position: relative;
+}
+
+
+.history-reserve-list_item-rate {
+    display: grid;
+    grid-template-columns: 2fr 0.5fr 2fr;
+    grid-gap: 0.5rem;
+    align-items: center;
+}
+
+.history-reserve-list_item-rate_from,
+.history-reserve-list_item-rate_to {
+    color: #FFF;
+    font-size: 1.2rem;
+    font-weight: 400;
+    margin: 0;
+}
+.history-reserve-list_item-rate_from img,
+.history-reserve-list_item-rate_to img {
+    width: 3rem;
+    height: 3rem;
+    object-fit: contain;
+    margin: 0 0.5rem;
+}
+
+
+.history-reserve-list_item-rate hr {
+    position: relative;
+    width: 50%;
+    margin: 0 1rem 0 0;
+}
+
+
+.history-reserve-list_item-reserve p {
+    margin: 0;
+    color: #54ADFF;
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+
+
+
+
+footer {
+    width: 100%;
+    background: #181C1F;
+    color: #20262A;
+}
+
+header h1, footer h2 {
+    color: white;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 500;
+}
