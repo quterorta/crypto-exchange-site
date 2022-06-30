@@ -1,0 +1,619 @@
+.admin-layout {
+    display: flex;
+    flex-direction: row;
+    font-family: 'Raleway', sans-serif;
+}
+
+
+.admin-sidebar {
+    width: 5%;
+    background-color: black;
+    min-height: 100vh;
+    padding: 0 0 2rem 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+    align-items: center;
+}
+
+.admin-sidebar-menu {
+    list-style: none;
+    padding: 0;
+}
+.admin-sidebar-menu li {
+    margin: 3rem 0;
+}
+
+.admin-sidebar-link {
+    text-decoration: none;
+    font-size: 0.75rem;
+    font-weight: 300;
+    line-height: 1;
+    color: rgba(255, 255, 255, 0.5);
+    text-transform: uppercase;
+}
+.admin-sidebar-link i {
+    font-size: 1.5rem;
+}
+.admin-sidebar-link:hover {
+    color: rgba(255, 255, 255, 0.9);
+}
+.admin-sidebar-copyright {
+    color: rgba(255, 255, 0, 0.25);
+    font-size: 2rem;
+    font-family: 'Bungee', cursive;
+}
+.admin-sidebar-copyright:hover {
+    color: rgba(255, 255, 0, 0.7);
+}
+
+.admin-sidebar-home i {
+    font-size: 2rem;
+}
+
+
+.admin-content {
+    width: 95%;
+    background-color: rgba(0, 0, 0, 0.025);
+    padding: 2.5rem 5%;
+}
+
+.admin-header {
+    text-align: right;
+    font-weight: 700;
+    color: black;
+    border-bottom: 2px solid black;
+}
+
+
+.admin-navbar {
+}
+.admin-navbar ul {
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+.admin-navbar-header {
+    font-size: 2vw;
+    font-weight: 700;
+    color: black;
+}
+.admin-navbar-link a {
+    color: black;
+    font-weight: 600;
+    font-size: 1.5vw;
+    padding: 0.5rem 2rem;
+    background: #ce4613;
+    display: inline-block;
+    text-decoration: none;
+}
+.admin-navbar-link a:hover {
+    box-shadow: 0px 0px 0px 3px black;
+    color: white;
+}
+
+
+.admin-items-container {
+    padding-top: 5rem;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 2rem;
+    align-items: center;
+}
+.admin-items-container.g5 {
+    grid-template-columns: repeat(5, 1fr);
+}
+
+.admin-items-list_container {
+    padding-top: 5rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 1rem;
+    align-items: center;
+}
+
+.admin-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem;
+    border: 2px solid black;
+    border-radius: 0.5rem;
+    height: 100%;
+    width: 100%;
+}
+.admin-item:hover {
+    background-color: rgba(0, 0, 0, 0.025);
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+}
+
+.admin-list_item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 0.25rem 0.5rem;
+    border: 2px solid black;
+    border-radius: 0.5rem;
+    height: 100%;
+    width: 100%;
+}
+.admin-list_item:hover {
+    background-color: rgba(0, 0, 0, 0.025);
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+}
+.admin-list_item p {
+    margin: 0;
+    display: inline-block;
+}
+
+.admin-list_item-id_container {
+    color: black;
+    font-weight: 600;
+    font-size: 1.25vw;
+    margin: 0 0.5rem;
+    width: 5%;
+}
+
+.admin-list_item-currency_container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 45%;
+}
+.admin-list_item-currency_container a {
+    text-decoration: none;
+    color: black;
+    font-size: 1.125vw;
+    font-weight: 400;
+}
+.admin-list_item-currency_container a img {
+    width: 2rem;
+}
+.admin-list_item-reserve_container,
+.admin-list_item-rate_container {
+    color: black;
+    font-size: 1.25vw;
+    font-weight: 300;
+    text-align: right;
+    margin: 0 1rem 0 0.5rem;
+    width: 30%;
+}
+.admin-list_item-reserve_container b,
+.admin-list_item-rate_container b {
+    font-weight: 600;
+}
+.admin-list_item .admin-item-control {
+    width: 10% !important;
+}
+
+.admin-item-header-link {
+    color: #ce4613;
+    font-size: 1.25vw;
+    font-weight: 500;
+    text-decoration: none;
+    text-align: center;
+}
+.admin-item-header-link:hover,
+.admin-item-order-link:hover,
+.admin-item-link:hover,
+.admin-item-order-link:hover,
+.admin-item-status-link:hover {
+    color: black;
+    box-shadow: 0px 2px 0 0 black;
+}
+
+.admin-item-order-link {
+    color: #ce4613;
+    font-size: 2rem;
+    font-weight: 500;
+    text-decoration: none;
+    text-align: center;
+    margin: 1rem 0;
+}
+.admin-item-order-link img {
+    width: 2rem;
+    margin-right: 0.5rem;
+}
+
+.admin-item-status-link {
+    color: #ce4613;
+    font-size: 2rem;
+    font-weight: 500;
+    text-decoration: none;
+    text-align: center;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.15);
+    line-height: 1;
+    padding: 0.5rem 0;
+    border-radius: 0.5rem;
+}
+.admin-item-status-link b {
+    font-size: 1.25rem;
+    font-weight: 700;
+}
+
+.admin-item-link {
+    color: black;
+    font-size: 1.1rem;
+    font-weight: 400;
+    text-decoration: none;
+}
+
+.admin-item-description,
+.admin-item-price,
+.admin-item-popular,
+.admin-item-new-to-date {
+    margin: 0;
+    line-height: 1;
+    color: black;
+    font-weight: 300;
+    font-size: 0.9vw;
+}
+
+.admin-item-manufacturer {
+    width: 10vw;
+}
+
+.admin-item-control {
+    margin-top: 1rem;
+    width: 100%;
+}
+
+.admin-item-review-link {
+    color: black;
+    font-size: 1.1rem;
+    font-weight: 400;
+    line-height: 1;
+    margin: 1rem 0;
+    padding: 0.5rem;
+    border-bottom: 1px solid black;
+    border-top: 1px solid black;
+    width: 100%;
+    text-decoration: none;
+}
+.admin-item-review-link:hover {
+    color: black;
+    background: rgba(0, 0, 0, 0.1);
+}
+
+.admin-item-control ul {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 0;
+    list-style: none;
+    margin: 0;
+}
+.admin-item-control ul li a,
+.admin-item-control ul li form,
+.admin-item-control ul li button
+{
+    display: inline-block;
+    padding: 0;
+    border: none;
+    background: none;
+    text-decoration: none;
+}
+.admin-item-control-edit {
+    color: #ce4613;
+    opacity: 0.7;
+    font-size: 1.5vw;
+}
+.admin-item-control-edit:hover {
+    opacity: 1;
+    color: #ce4613;
+}
+.admin-item-control-delete {
+    color: red;
+    opacity: 0.7;
+    font-size: 1.5vw;
+    margin-left: 0.5rem;
+}
+.admin-item-control-delete:hover {
+    color: red;
+    opacity: 1;
+}
+
+.admin-form-container {
+    padding: 0 10%;
+    margin-top: 5rem;
+}
+
+.admin-form-container .form-group {
+    margin: 1.5rem 0;
+}
+.admin-form-container .form-group label {
+    color: black;
+    font-size: 1.5vw;
+    font-weight: 400;
+    border-bottom: 2px solid #ce4613;
+    line-height: 1;
+    margin-bottom: 0.5rem;
+}
+.admin-form-container .form-group input,
+.admin-form-container .form-group textarea,
+.admin-form-container .form-group select {
+    border: 1px solid #ce4613;
+    font-size: 1.5vw;
+    color: black;
+    font-weight: 300;
+}
+.admin-form-container .form-group input:active,
+.admin-form-container .form-group select:active,
+.admin-form-container .form-group textarea:active,
+.admin-form-container .form-group input:focus,
+.admin-form-container .form-group textarea:focus,
+.admin-form-container .form-group select:focus {
+    border: 1px solid #ce4613;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.25);
+}
+
+.admin-form-container .form-group button {
+    width: 100%;
+    font-size: 1.5vw;
+    font-weight: 500;
+    color: black;
+    border: 2px solid #ce4613;
+    background: white;
+}
+.admin-form-container .form-group button:hover {
+    color: white;
+    background: #ce4613;
+}
+.admin-form-container .form-group button:focus {
+    border: 2px solid #ce4613;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.25);
+}
+
+
+#uploadImagesList {
+    margin-top: 2.5rem;
+}
+
+#uploadImagesList {
+    list-style: none;
+    padding: 0;
+}
+#uploadImagesList .item {
+    float: left;
+    margin-right: 20px;
+    margin-bottom: 20px;
+}
+#uploadImagesList .item .img-wrap {
+    width: inherit;
+    display: block;
+    height: 150px;
+}
+#uploadImagesList .item .img-wrap img{
+    width: auto;
+    height: inherit;
+}
+#uploadImagesList .item .delete-link {
+    cursor: pointer;
+    display: block;
+}
+.clear {
+    clear: both;
+}
+
+
+.admin-item-accordion {
+    margin: 1rem;
+    width: 100%;
+}
+
+.admin-item-accordion .accordion-button:not(.collapsed) {
+    border: 1px solid #ce4613 !important;
+    color: #ce4613 !important;
+    background: none !important;
+}
+.admin-item-accordion .accordion-button:focus {
+    border-color: #ce4613 !important;
+    box-shadow: 0 0 7px 0 rgba(0,0,0,0.5) !important;
+}
+
+
+.admin-image-form-container {
+    grid-gap: 2rem;
+}
+
+
+.admin-item-image img {
+    width: 100%;
+}
+
+
+.admin-subheader {
+    color: black;
+    font-size: 1.75rem;
+    font-weight: 400;
+}
+
+.admin-item-subform-container .form-group {
+    margin: 1rem 0;
+}
+.admin-item-subform .form-group input,
+.admin-item-subform .form-group textarea,
+.admin-item-subform .form-group select {
+    font-size: 1vw;
+}
+
+.admin-item-subform .form-group label {
+    font-size: 1vw;
+}
+
+
+.shop_page__paginate {
+    margin: 5rem 0 0 0;
+    text-align: center;
+}
+.shop_page__paginate .product-pagination ul li {
+    list-style: none;
+    display: inline;
+}
+.shop_page__paginate .product-pagination ul {
+    padding: 0;
+}
+.shop_page__paginate .product-pagination li {
+    font-size: 1.5rem;
+    line-height: 1;
+    font-weight: 500;
+    padding: 0.25rem 0.75rem;
+    color: black;
+    background-color: #ed5435;
+    opacity: 0.5;
+    transition: all 0.15s ease;
+    border-radius: 0.25rem;
+}
+.shop_page__paginate .product-pagination li:hover {
+    opacity: 1;
+}
+.shop_page__paginate .product-pagination li a {
+    padding: 0;
+    line-height: inherit;
+    text-decoration: none;
+    color: black;
+}
+.shop_page__paginate .product-pagination .active {
+    color: white;
+    background-color: #2a2731;
+    opacity: 1;
+}
+.shop_page__paginate .product-pagination .disabled {
+    color: black;
+    background-color: rgba(0, 0, 0, 0.05);
+    opacity: 1;
+}
+
+
+.add-specifications-button-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;;
+    justify-content: start;
+    padding-right: 50%;
+}
+.add-specifications-button {
+    font-size: 1vw !important;
+    display: block !important;
+    background: rgba(0, 255, 0, 0.25) !important;
+}
+.add-existing-specifications-button {
+    font-size: 1vw !important;
+    display: block !important;
+    background: rgba(255, 255, 0, 0.25) !important;
+    margin: 0 1rem;
+}
+.add-specifications-button:hover {
+    color: black !important;
+    background: rgba(0, 255, 0, 0.5) !important;
+}
+
+.add-existing-specifications-button:hover {
+    color: black !important;
+    background: rgba(255, 255, 0, 0.5) !important;
+}
+
+.admin-product-specifications-block .input-group {
+    margin: 1rem 0;
+}
+
+
+.spec-group-input .select2 {
+    font-size: 1.5vw;
+    color: black !important;
+}
+.spec-group-input .select2-container--default .select2-selection--single {
+    height: 100%;
+    border: 1px solid #ce4613;
+}
+
+.spec-group-input .select2-container--default .select2-selection--single .select2-selection__rendered {
+    position: absolute;
+    color: black;
+    top: 50%;
+    transform: translate(0, -50%);
+}
+.spec-group-input .select2-container--default .select2-results>.select2-results__options {
+    font-size: 1.5vw;
+}
+.spec-group-input  .select2-container--default .select2-results__option--highlighted.select2-results__option--selectable {
+    background-color: #ce4613;
+}
+
+.admin-form-sublink {
+    border: 2px solid black;
+    padding: 2px 2rem;
+    font-size: 1.5vw;
+    font-weight: 500;
+    color: #ce4613;
+    text-decoration: none;
+}
+.admin-form-sublink:hover {
+    color: black;
+    border: 2px solid #ce4613;
+}
+
+
+.search-currency-admin-button {
+    display: block;
+    background: #ce4613 !important;
+    box-shadow: 0 0 0 2px #ce4613 !important;
+    color: white !important;
+    font-size: 1.1rem !important;
+    font-weight: 400 !important;
+    padding: 0.1rem 1rem !important;
+    margin-bottom: 0.5rem;
+    border-radius: 0.25rem;
+    width: auto !important;
+}
+.search-currency-admin-button:hover {
+    background: white;
+    cursor: pointer;
+    color: #ce4613;
+}
+
+
+.modal-body .admin-form-container .form-label {
+    color: black;
+    font-weight: 400;
+    font-size: 1.5vw;
+    display: inline-block;
+    border-bottom: 2px solid #ce4613;
+}
+.modal-body .admin-form-container {
+    margin: 0 !important;
+    padding: 0!important;
+}
+
+#searchCurrencyCode_result {
+    color: black;
+    font-weight: 300 !important;
+    font-size: 1.25vw;
+    padding: 0.5rem;
+    border: 2px solid #ce4613;
+    border-radius: 0.25rem;
+}
+#searchCurrencyCode_result b {
+    font-weight: 500 !important;
+}
+#searchCurrencyCode_result i {
+    text-transform: uppercase;
+    font-style: normal;
+    font-weight: 800;
+    color: #ce4613;
+}
+
+
+.modalAdmin .modal-dialog {
+    max-width: 70vw !important;
+    text-align: center;
+}
