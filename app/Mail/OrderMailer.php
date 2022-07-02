@@ -8,7 +8,7 @@ use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 use stdClass;
 
-class ContactMailer extends Mailable
+class OrderMailer extends Mailable
 {
     use Queueable, SerializesModels;
 
@@ -32,7 +32,7 @@ class ContactMailer extends Mailable
      */
     public function build()
     {
-        return $this->subject('Mesaj pe pagina produsului')
-            ->view('layouts.mail.contact', ['data' => $this->data]);
+        return $this->subject('New order!')
+            ->view('layouts.mail.order', ['data' => $this->data]);
     }
 }

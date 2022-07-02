@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Currency;
+use App\Models\CurrencyRate;
 use App\Models\Order;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -17,10 +18,14 @@ class OrderController extends Controller
     private $title = 'Order';
     private $titleMany = 'Orders';
 
+    private $currencyRateModel;
+
     public function __construct(
-        ResponseFactory $responseFactory
+        ResponseFactory $responseFactory,
+        CurrencyRate $currencyRateModel
     ) {
         $this->responseFactory = $responseFactory;
+        $this->currencyRateModel = $currencyRateModel;
     }
 
     /**
@@ -80,8 +85,16 @@ class OrderController extends Controller
         $toCode = $to->code;
         $toImage = $to->image;
 
+        $user = User::find($request->user_id);
+        $email = $user->email ? $user->email : 'User dont have email';
+        $phone = $user->phone ? $user->phone : 'User dont have phone';
+        $wallet = $request->wallet ? $request->wallet : $user->wallet ? $user->wallet : 'User dont have wallet';
+
         $order = Order::create([
             'user_id' => $request->user_id,
+            'email' => $email,
+            'phone' => $phone,
+            'wallet' => $wallet,
             'from_currency_id' => $fromId,
             'fromCode' => $fromCode,
             'fromImage' => $fromImage,
@@ -89,6 +102,7 @@ class OrderController extends Controller
             'toCode' => $toCode,
             'toImage' => $toImage,
             'sum' => $request->sum,
+            'total' => $this->currencyRateModel->getRate($from, $to),
             'status' => $request->status,
         ]);
 
@@ -151,6 +165,9 @@ class OrderController extends Controller
 
         $order->update([
             'user_id' => $request->user_id,
+            'phone' => $request->phone,
+            'email' => $request->email,
+            'wallet' => $request->wallet,
             'from_currency_id' => $fromId,
             'fromCode' => $fromCode,
             'fromImage' => $fromImage,
@@ -158,6 +175,7 @@ class OrderController extends Controller
             'toCode' => $toCode,
             'toImage' => $toImage,
             'sum' => $request->sum,
+            'total' => $request->total,
             'status' => $request->status,
         ]);
 

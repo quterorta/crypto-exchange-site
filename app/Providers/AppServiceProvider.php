@@ -26,8 +26,10 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         $supportEmail = env('APP_MAIL_FOR_SUPPORT');
+        $appName = env('APP_NAME');
         View::share([
-            'supportEmail' => $supportEmail
+            'supportEmail' => $supportEmail,
+            'appName' => $appName
         ]);
     }
 }

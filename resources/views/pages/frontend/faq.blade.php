@@ -1,7 +1,7 @@
 @extends('layouts.main-layout')
 
 @section('page-title')
-    {{ $appName }} | {{ __('About Us') }}
+    {{ $appName }} | {{ __('FAQ') }}
 @endsection
 
 @section('header')@include('layouts.frontend.header')@endsection

@@ -25,8 +25,13 @@
             <a href="{{ route('login') }}" class="header-bottom_section-auth_link">{{ __('Login') }}</a>
             <a href="{{ route('register') }}" class="header-bottom_section-auth_link">{{ __('Register') }}</a>
         @else
-            <a href="{{ route('account', Auth::user()->id) }}" class="header-bottom_section-auth_link">{{ __('Account') }}</a>
-            <a href="{{ route('logout') }}" class="header-bottom_section-auth_link">{{ __('Logout') }}</a>
+            <a href="{{ route('account') }}" class="header-bottom_section-auth_link">{{ __('Account') }}</a>
+            <a href="{{ route('logout') }}" class="header-bottom_section-auth_link" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                {{ __('Logout') }}
+            </a>
+            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                @csrf
+            </form>
         @endif
     </div>
 </div>
