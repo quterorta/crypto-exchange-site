@@ -15,6 +15,7 @@ class AdminController extends Controller
     public const RATE_WITH_SYMBOL_API_URL = 'https://api.binance.com/api/v3/ticker/price?symbol=';
     public const RATE_WITH_SYMBOLS_API_URL = 'https://api.binance.com/api/v3/ticker/price?symbols=';
     public const CURRENCIES_API_URL = 'https://api.coingecko.com/api/v3/exchange_rates';
+    public const SEARCH_CURRENCIES_API_URL = 'https://api.coingecko.com/api/v3/search';
     public const OPEN_ARRAY_BRACKET = '%5B';
     public const CLOSE_ARRAY_BRACKET = '%5D';
     public const QUOTES = '%22';
@@ -38,25 +39,19 @@ class AdminController extends Controller
 
         $response = Http::withHeaders([
             'Accept' => 'application/json'
-        ])->get(self::CURRENCIES_API_URL);
+        ])->get(self::SEARCH_CURRENCIES_API_URL);
 
-        $rates = json_decode($response, true)['rates'];
+        $rates = json_decode($response, true)['coins'];
+
         $data = [];
-        $currency = [];
-        $i = 0;
-        $codes = array_keys($rates);
-
         foreach ($rates as $rate) {
-            if (stripos($codes[$i], $q) !== false || stripos($rate['name'], $q) !== false) {
+            if (stripos($rate['id'], $q) !== false || stripos($rate['name'], $q) !== false || stripos($rate['symbol'], $q) !== false) {
                 $currency = [
                     'name' => $rate['name'],
-                    'code' => $codes[$i],
-                    'unit' => $rate['unit'],
-                    'type' => $rate['type']
+                    'code' => $rate['symbol'],
                 ];
                 $data[] = $currency;
             }
-            $i++;
         }
 
         return response()->json($data);

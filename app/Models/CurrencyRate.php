@@ -34,40 +34,24 @@ class CurrencyRate extends Model
             return 1;
         }
 
-        if ($this->isFiat($to)) {
+        $rate = $this->sendRequest($to, $from);
+        if (!$rate) {
             $rate = $this->sendRequest($from, $to);
             if (!$rate) {
-                $rate = $this->sendRequest($to, $from);
-                if (!$rate) {
-                    return 0;
-                }
-            }
-            return $rate;
-        } else {
-            if ($from == 'BTC') {
-                $inverseRate = $this->sendRequest($to, $from);
-                if (!$inverseRate) {
-                    $inverseRate = $this->sendRequest($to, $from);
-                    if (!$inverseRate) {
-                        return 0;
-                    }
-                    return 1/$inverseRate;
-                }
-                return 1/$inverseRate;
-            } else {
-                $rate = $this->sendRequest($from, $to);
-                if (!$rate) {
-                    $rate = $this->sendRequest($to, $from);
-                    if (!$rate) {
-                        return 0;
-                    }
-                }
-                return $rate;
+                return 0;
             }
         }
+
+        if ($from == 'BTC' && $this->isCrypro($to)) {
+            $rate = 1/$rate;
+        } else {
+            return $rate;
+        }
+
+        return $rate;
     }
 
-    public function isFiat($code)
+    public function isCrypro($code)
     {
         $response = Http::withHeaders([
             'Accept' => 'application/json'
@@ -83,7 +67,7 @@ class CurrencyRate extends Model
 
         foreach ($rates as $rate) {
             if (stripos($codes[$i], $code)) {
-                if ($rate['type'] == 'fiat') {
+                if ($rate['type'] == 'crypto') {
                     return true;
                 }
             }

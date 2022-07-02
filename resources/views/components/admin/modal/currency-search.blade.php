@@ -42,10 +42,11 @@ $(document).ready(function() {
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr("content")
             },
             success: (data) => {
+                console.log(data);
                 resultBlock.empty();
                 $.each(data, function(i, item) {
                     resultBlock.append('' +
-                        '<b>Currency Code:</b> <i>'+item.code+'</i>, <b>name:</b> '+item.name+', <b>type:</b> '+item.type+', <b>unit:</b> '+item.unit
+                        '<b>Currency Code:</b> <i>'+item.code+'</i>, <b>name:</b> '+item.name
                     );
                     resultBlock.append('<br>');
                 });
