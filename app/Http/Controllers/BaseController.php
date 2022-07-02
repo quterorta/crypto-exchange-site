@@ -35,7 +35,7 @@ class BaseController extends Controller
     {
         $currencies = Currency::all();
         $orders = Order::where('status', 1)->limit(10)->get();
-        $reviews = Review::orderByDesc('created_at')->limit(10)->get();
+        $reviews = Review::where('moderated', 1)->orderByDesc('created_at')->limit(10)->get();
         $currencyRates = CurrencyRate::where('reserve', '>', 0)->get();
         return $this->responseFactory->view(
             'pages.frontend.home',

@@ -38,6 +38,14 @@
                         </select>
                     </div>
                     <div class="form-group">
+                        <label for="moderated">{{ __('Moderated') }}</label>
+                        <select name="moderated" id="moderated" class="form-select" required>
+                            <option value=null disabled>--- {{ __('Moderated') }} ---</option>
+                            <option value=0 selected>{{ __('No') }}</option>
+                            <option value=1>{{ __('Yes') }}</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
                         <label for="text">{{ __('Review Text') }}</label>
                         <textarea name="text" id="text" rows="5" placeholder="{{ __('Review Text') }}" class="form-control" minlength="1"></textarea>
                     </div>

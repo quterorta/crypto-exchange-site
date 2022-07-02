@@ -68,7 +68,8 @@ class ReviewController extends Controller
     {
         $review = Review::create([
             'user_id' => $request->user_id,
-            'text' => $request->text
+            'text' => $request->text,
+            'moderated' => $request->moderated
         ]);
 
         return redirect()->route('review.index')->withSuccess('Review successfully created!');
@@ -115,7 +116,8 @@ class ReviewController extends Controller
     {
         $review->update([
             'user_id' => $request->user_id,
-            'text' => $request->text
+            'text' => $request->text,
+            'moderated' => $request->moderated
         ]);
 
         return redirect()->route('review.index')->withSuccess('Review successfully changed!');
