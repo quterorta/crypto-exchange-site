@@ -88,7 +88,12 @@ class OrderController extends Controller
         $user = User::find($request->user_id);
         $email = $user->email ? $user->email : 'User dont have email';
         $phone = $user->phone ? $user->phone : 'User dont have phone';
-        $wallet = $request->wallet ? $request->wallet : $user->wallet ? $user->wallet : 'User dont have wallet';
+        $wallet = 'User dont have wallet';
+        if ($request->wallet) {
+            $wallet = $request->wallet;
+        } else if ($user->wallet) {
+            $wallet = $user->wallet;
+        }
 
         $order = Order::create([
             'user_id' => $request->user_id,
