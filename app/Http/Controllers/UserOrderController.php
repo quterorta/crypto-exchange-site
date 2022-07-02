@@ -2,11 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\OrderMailer;
 use App\Models\Currency;
 use App\Models\Order;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
+use stdClass;
 
 class UserOrderController extends Controller
 {
@@ -54,7 +57,7 @@ class UserOrderController extends Controller
         $toCode = $to->code;
         $toImage = $to->image;
 
-        $user = Auth::user() ? Auth::user() : User::where('name', 'Guest');
+        $user = Auth::user() ? Auth::user() : User::where('name', 'Guest')->first();
         $user_id = $user->id;
         $status = 2;
 
@@ -75,6 +78,14 @@ class UserOrderController extends Controller
         ]);
 
         $orderId = $order->id;
+        $data = new stdClass();
+        $data->name = $user->name;
+        $data->email = $user->email;
+        $data->phone = $user->phone;
+        $data->order = $orderId;
+        $data->link = route('order.edit', $orderId);
+
+        Mail::to(env('ADMIN_MAIL_FOR_CONTACTS'))->send(new OrderMailer($data));
 
         return redirect()->route('order-success', compact('orderId'))->withSuccess('Exchange request successfully created!');
     }
