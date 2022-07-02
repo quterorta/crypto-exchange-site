@@ -46,8 +46,12 @@
                         </select>
                     </div>
                     <div class="form-group">
-                        <label for="sum">{{ __('Total') }}</label>
-                        <input type="number" name="sum" id="sum" class="form-control" placeholder="{{ __('Total') }}" value="{{ $order->sum }}" required min="0" step="0.00001">
+                        <label for="sum">{{ __('Sum') }}</label>
+                        <input type="number" name="sum" id="sum" class="form-control" placeholder="{{ __('Sum') }}" value="{{ $order->sum }}" required min="0" step="0.00001">
+                    </div>
+                    <div class="form-group">
+                        <label for="total">{{ __('Total') }}</label>
+                        <input type="number" name="total" id="total" class="form-control" placeholder="{{ __('Total') }}" required value="{{ $order->total ?? '' }}">
                     </div>
                     <div class="form-group">
                         <label for="user_id">{{ __('User') }}</label>
@@ -57,6 +61,18 @@
                                 <option @if($order->user_id === $user->id) selected @endif value={{ $user->id }}>{{ $user->name }}</option>
                             @endforeach
                         </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="wallet">{{ __('Wallet') }}</label>
+                        <input type="text" name="wallet" id="wallet" class="form-control" placeholder="{{ __('Wallet') }}" required value="{{ $order->wallet ?? '' }}">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">{{ __('Email') }}</label>
+                        <input type="email" name="email" id="email" class="form-control" placeholder="{{ __('Email') }}" required value="{{ $order->email ?? '' }}">
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">{{ __('Phone') }}</label>
+                        <input type="tel" name="phone" id="phone" class="form-control" placeholder="{{ __('Phone') }}" required value="{{ $order->phone ?? '' }}">
                     </div>
                     <div class="form-group">
                         <label for="status">{{ __('Status') }}</label>

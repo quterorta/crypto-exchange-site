@@ -1,7 +1,7 @@
 @extends('layouts.main-layout')
 
 @section('page-title')
-    Home
+    {{ $appName }} | Home
 @endsection
 
 @section('header')@include('layouts.frontend.header')@endsection
@@ -41,7 +41,7 @@
                                     <td class="exchange-rate_info-table-item_reserve">{{ $cur['reserve'] }}</td>
                                     <td class="exchange-rate_info-table-item_button">
                                         <button type="button" class="exchange-order-button">
-                                            <span class="exchange-order-button-text">+</span>
+                                            <a href="{{ route('exchange') }}?give={{ $cur['from'] }}&receive={{ $cur['to'] }}" class="exchange-order-button-text" style="text-decoration: none;">+</a>
                                         </button>
                                     </td>
                                 </tr>
@@ -128,7 +128,7 @@
 
     <section class="history gb-3">
         <div class="history-last_exchange_container">
-            <p class="history-last_exchange_header">{{ __('Last exchanges') }} <a href="#"><i class="fa-solid fa-circle-plus"></i></a></p>
+            <p class="history-last_exchange_header">{{ __('Last exchanges') }} <a href="{{ route('exchange') }}"><i class="fa-solid fa-circle-plus"></i></a></p>
             <div class="history-last_exchange-list_container">
                 @foreach($orders as $order)
                     <div class="history-last_exchange-list_item">
@@ -139,11 +139,11 @@
                 @endforeach
             </div>
         </div>
-        <div class="history-last_review_container">
-            <p class="history-last_review_header">{{ __('Last reviews') }} <a href="#"><i class="fa-solid fa-circle-plus"></i></a></p>
+        <div class="history-last_review_container" id="reviews">
+            <p class="history-last_review_header">{{ __('Last reviews') }} <a href="#" data-bs-toggle="modal" data-bs-target="#reviewModal"><i class="fa-solid fa-circle-plus"></i></a></p>
             <div class="history-last_review-list_container">
                 @foreach($reviews as $review)
-                    <div class="history-last_review-list_item">
+                    <div class="history-last_review-list_item @if($review->user_id === Auth::user()->id) my-review @endif" @if($review->user_id === Auth::user()->id) title="{{ __('Its your review =)') }}" @endif>
                         <p class="history-last_review-list_item-user">{{ $review->user->name }} <i>{{ $review->created_at }}</i></p>
                         <p class="history-last_review-list_item-text">{{ $review->text }}</p>
                     </div>
@@ -173,6 +173,10 @@
         </div>
     </section>
 
+    <section class="order_container ptb5 plr5">
+        <p class="order-header">{{__('Apply for an exchange right now!')}}</p>
+        <a class="order-link" href="{{ route('exchange') }}">{{ __('Go to checkout') }}</a>
+    </section>
 </div>
 <!-- pills script -->
 <script>
@@ -231,6 +235,38 @@
         }
     });
 </script>
+<!-- pills script -->
+
+<!-- modal review -->
+<div class="modal fade" id="reviewModal" tabindex="-1" aria-labelledby="reviewModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="reviewModalLabel">{{ Auth::user()->name }}{{ __(', please leave your feedback') }}</h5>
+                <button type="button" data-bs-dismiss="modal" aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <div class="modal-body">
+                @if(Auth::user())
+                    <form action="{{ route('review-frontend.store') }}" method="post">
+                        @csrf
+                        <input type="text" name="user_id" hidden readonly value="{{ Auth::user()->id }}">
+                        <div class="form-group">
+                            <label for="text">{{ __('Review') }}</label>
+                            <textarea name="text" id="text" rows="3" minlength="10" required class="form-control"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="modal-review-button">{{ __('Leave feedback') }}</button>
+                        </div>
+                    </form>
+                @else
+                    <p class="modal-review-hint">{{ __('To leave your review, you need to') }} <a href="{{ route('login') }}">{{ __('login') }}</a> {{ __('or') }} <a href="{{ route('register') }}">{{ __('register') }}</a>.</p>
+                @endif
+            </div>
+        </div>
+    </div>
+</div>
+<!-- modal review -->
+
 @endsection
 
 @section('footer')@include('layouts.frontend.footer')@endsection

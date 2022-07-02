@@ -29,40 +29,48 @@
                 <form action="{{ route('order.store') }}" method="post" enctype="multipart/form-data">
                     @csrf
                     <div class="form-group">
-                        <label for="from_currency_id">From Currency</label>
+                        <label for="from_currency_id">{{ __('From Currency') }}</label>
                         <select name="from_currency_id" id="from_currency_id" class="form-select" required>
-                            <option value=null disabled>--- Select Currency ---</option>
+                            <option value=null disabled>--- {{ __('Select Currency') }} ---</option>
                             @foreach($currencies as $currency)
                                 <option value={{ $currency->id }}>{{ $currency->name }} | {{ $currency->code }}</option>
                             @endforeach
                         </select>
                     </div>
                     <div class="form-group">
-                        <label for="to_currency_id">To Currency</label>
+                        <label for="to_currency_id">{{ __('To Currency') }}</label>
                         <select name="to_currency_id" id="to_currency_id" class="form-select" required>
-                            <option value=null disabled>--- Select Currency ---</option>
+                            <option value=null disabled>--- {{ __('Select Currency') }} ---</option>
                             @foreach($currencies as $currency)
                                 <option value={{ $currency->id }}>{{ $currency->name }} | {{ $currency->code }}</option>
                             @endforeach
                         </select>
                     </div>
                     <div class="form-group">
-                        <label for="sum">Total</label>
-                        <input type="number" name="sum" id="sum" class="form-control" placeholder="Total" required min="0" step="0.00001">
+                        <label for="sum">{{ __('Sum') }}</label>
+                        <input type="number" name="sum" id="sum" class="form-control" placeholder="{{ __('Sum') }}" required>
                     </div>
                     <div class="form-group">
-                        <label for="user_id">User</label>
+                        <label for="total">{{ __('Total') }}</label>
+                        <input type="number" name="total" id="total" class="form-control" placeholder="{{ __('Total set automatically') }}">
+                    </div>
+                    <div class="form-group">
+                        <label for="user_id">{{ __('User') }}</label>
                         <select name="user_id" id="user_id" class="form-select" required>
-                            <option value=null disabled>--- Select User ---</option>
+                            <option value=null disabled>--- {{ __('Select User') }} ---</option>
                             @foreach($users as $user)
                                 <option @if($user->name === 'Guest') selected @endif value={{ $user->id }}>{{ $user->name }}</option>
                             @endforeach
                         </select>
                     </div>
                     <div class="form-group">
-                        <label for="status">Status</label>
+                        <label for="wallet">{{ __('Wallet') }}</label>
+                        <input type="text" name="wallet" id="wallet" class="form-control" placeholder="{{ __('Wallet') }}">
+                    </div>
+                    <div class="form-group">
+                        <label for="status">{{ __('Status') }}</label>
                         <select name="status" id="status" class="form-select" required>
-                            <option value=null disabled>--- Select Status ---</option>
+                            <option value=null disabled>--- {{ __('Select Status') }} ---</option>
                             <option value=0>{{ __('Canceled') }}</option>
                             <option value=1>{{ __('Completed') }}</option>
                             <option value=2 selected>{{ __('New') }}</option>
@@ -71,7 +79,7 @@
                         </select>
                     </div>
                     <div class="form-group">
-                        <button type="submit" class="btn btn-success btn-block">Create</button>
+                        <button type="submit" class="btn btn-success btn-block">{{ __('Create') }}</button>
                     </div>
                 </form>
             </div>

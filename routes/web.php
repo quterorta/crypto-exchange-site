@@ -2,16 +2,16 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\AdminController;
-use App\Http\Controllers\Admin\ProductSpecificationController;
 use App\Http\Controllers\Admin\CurrencyController;
 use App\Http\Controllers\Admin\CurrencyRateController;
 use App\Http\Controllers\BaseController;
+use App\Http\Controllers\UserOrderController;
 use App\Http\Controllers\MailController;
 use App\Http\Controllers\Admin\OrderController;
 use App\Http\Controllers\Admin\ReviewController;
 use App\Http\Controllers\Admin\UserController;
-use App\Http\Controllers\ProductController as UserProductController;
-use App\Http\Controllers\CategoryController as UserCategoryController;
+use App\Http\Controllers\UserFrontendController;
+use App\Http\Controllers\ReviewFrontendController;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,19 +27,17 @@ use App\Http\Controllers\CategoryController as UserCategoryController;
 Route::get('/', [BaseController::class, 'homePageView'])->name('home');
 Route::get('/about-us', [BaseController::class, 'aboutUsPageView'])->name('about-us');
 Route::get('/exchange', [BaseController::class, 'exchangePageView'])->name('exchange');
-Route::get('/reviews', [BaseController::class, 'reviewsPageView'])->name('reviews');
+Route::get('/#reviews')->name('reviews');
 Route::get('/faq', [BaseController::class, 'faqPageView'])->name('faq');
-Route::get('/contacts', [BaseController::class, 'contactsPageView'])->name('contacts');
-Route::get('/wishlist', [BaseController::class, 'wishlistPageView'])->name('wishlist');
-Route::post('/set-wishlist', [BaseController::class, 'setWishlist'])->name('set-wishlist');
-Route::get('/all-products', [BaseController::class, 'allProductsPageView'])->name('all-products');
-Route::post('/product-contact-form', [MailController::class, 'productDetailContactForm'])->name('product-contact-form');
-Route::post('/page-contact-form', [MailController::class, 'pageContactForm'])->name('page-contact-form');
-Route::post('/footer-contact-form', [MailController::class, 'footerContactForm'])->name('footer-contact-form');
-Route::get('/search', [BaseController::class, 'searchView'])->name('search');
-Route::get('/product/{slug}', [UserProductController::class, 'productDetailView'])->name('product-detail');
-Route::get('/category/{slug}/products', [UserCategoryController::class, 'categoryDetailView'])->name('category-detail');
-Route::get('/account/{id}', [BaseController::class, 'accountPageView'])->name('account');
+Route::get('/order-success', [BaseController::class, 'orderSuccessView'])->name('order-success');
+Route::get('/account', [BaseController::class, 'accountPageView'])->name('account');
+Route::post('/cancel-order/{id}', [UserOrderController::class, 'cancelOrder'])->name('user-order.cancel');
+Route::post('/confirm-order/{id}', [UserOrderController::class, 'confirmOrder'])->name('user-order.confirm-payment');
+Route::resource('user-order', UserOrderController::class);
+Route::resource('user-frontend', UserFrontendController::class);
+Route::resource('review-frontend', ReviewFrontendController::class);
+Route::post('/get-rate-frontend', [BaseController::class, 'getRateFrontend'])->name('get-rate-frontend');
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');
