@@ -1124,3 +1124,21 @@
     color: #FFFFFF;
     background: #20262A;
 }
+
+
+#reviewModal .modal-review-hint {
+    font-size: 1.25rem;
+    font-weight: 400;
+    color: white;
+    text-align: center;
+}
+#reviewModal .modal-review-hint a {
+    display: inline-block;
+    text-decoration: none;
+    color: #FFFFFF;
+    box-shadow: 0 1px 0 0 #54ADFF;
+}
+#reviewModal .modal-review-hint a:hover {
+    color: #54ADFF;
+    box-shadow: 0 3px 0 0 #54ADFF;
+}
