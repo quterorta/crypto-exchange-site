@@ -85,7 +85,8 @@ class UserOrderController extends Controller
         $data->order = $orderId;
         $data->link = route('order.edit', $orderId);
 
-        Mail::to(env('ADMIN_MAIL_FOR_CONTACTS'))->send(new OrderMailer($data));
+        $email = $this->getEmail();
+        Mail::to($email)->send(new OrderMailer($data));
 
         return redirect()->route('order-success', compact('orderId'))->withSuccess('Exchange request successfully created!');
     }
@@ -133,5 +134,10 @@ class UserOrderController extends Controller
     public function destroy(Order $order)
     {
         //
+    }
+
+    public function getEmail()
+    {
+        return env('ADMIN_MAIL_FOR_CONTACTS');
     }
 }
