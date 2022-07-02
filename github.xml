@@ -1,0 +1,7 @@
+<application>
+  <component name="GithubAccounts">
+    <account name="quterorta" id="e9edf657-1423-4b91-9349-e37aa5c19107">
+      <server host="github.com" />
+    </account>
+  </component>
+</application>
