@@ -45,8 +45,9 @@ class BaseController extends Controller
 
     public function aboutUsPageView()
     {
-        $partners = Partner::all();
-        return view('pages.frontend.about-us', compact('partners'));
+        return $this->responseFactory->view(
+            'pages.frontend.about-us',
+        );
     }
 
     public function exchangePageView(Request $request)
@@ -65,7 +66,9 @@ class BaseController extends Controller
     }
     public function faqPageView()
     {
-        return view('pages.frontend.home');
+        return $this->responseFactory->view(
+            'pages.frontend.faq'
+        );
     }
     public function accountPageView()
     {
