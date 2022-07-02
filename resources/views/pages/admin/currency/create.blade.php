@@ -28,9 +28,12 @@
                     </div>
                     <div class="form-group">
                         <label for="code">
-                            Currency Code
-                            <i class="fa-solid fa-circle-info" style="cursor:pointer;" title="{{ __('Currency code for getting exchange rates by API') }}"></i>
+                            {{ __('Currency Code') }}
+                            <i class="fa-solid fa-circle-info" style="cursor:pointer;" title="{{ __('Currency code for getting exchange rates by API. If you dont know needed code, use Search code') }}"></i>
                         </label>
+                        <button class="search-currency-admin-button" type="button" data-bs-toggle="modal" data-bs-target="#currencyCodeModal">
+                            {{ __('Search code') }}
+                        </button>
                         <input type="text" name="code" id="code" class="form-control" placeholder="Currency Code" required>
                     </div>
                     <div class="form-group">
