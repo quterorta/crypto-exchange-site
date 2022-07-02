@@ -64,15 +64,15 @@
                     </div>
                     <div class="form-group">
                         <label for="wallet">{{ __('Wallet') }}</label>
-                        <input type="text" name="wallet" id="wallet" class="form-control" placeholder="{{ __('Wallet') }}" value="{{ $order->wallet ?? '' }}">
+                        <input type="text" name="wallet" id="wallet" class="form-control" placeholder="{{ __('Wallet') }}" required value="{{ $order->wallet ?? '' }}">
                     </div>
                     <div class="form-group">
                         <label for="email">{{ __('Email') }}</label>
-                        <input type="email" name="email" id="email" class="form-control" placeholder="{{ __('Email') }}" value="{{ $order->email ?? '' }}">
+                        <input type="email" name="email" id="email" class="form-control" placeholder="{{ __('Email') }}" required value="{{ $order->email ?? '' }}">
                     </div>
                     <div class="form-group">
                         <label for="phone">{{ __('Phone') }}</label>
-                        <input type="tel" name="phone" id="phone" class="form-control" placeholder="{{ __('Phone') }}" value="{{ $order->phone ?? '' }}">
+                        <input type="tel" name="phone" id="phone" class="form-control" placeholder="{{ __('Phone') }}" required value="{{ $order->phone ?? '' }}">
                     </div>
                     <div class="form-group">
                         <label for="status">{{ __('Status') }}</label>
