@@ -48,9 +48,9 @@
                     @foreach($user->orders as $order)
                         <div class="account-history-item">
                             <div class="account-history-item-currencies">
-                                <p><img src="{{ Storage::url($order->fromImage) }}" alt=""> {{ $order->sum }} {{ $order->fromCode }}</p>
+                                <p><img src="{{ Storage::url($order->fromImage) }}" alt=""> {{ round($order->sum, 3) }} {{ $order->fromCode }}</p>
                                 <hr>
-                                <p><img src="{{ Storage::url($order->toImage) }}" alt=""> {{ $order->total }} {{ $order->toCode }}</p>
+                                <p><img src="{{ Storage::url($order->toImage) }}" alt=""> {{ round($order->total, 3) }} {{ $order->toCode }}</p>
                             </div>
                             <div class="account-history-item-wallet">
                                 <p>{{ __('Wallet:') }} {{ $order->wallet }}</p>

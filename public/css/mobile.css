@@ -1,3 +1,441 @@
 @media (max-width: 900px) {
+    .header-top_section {
+        padding: 0.5rem 0;
+        padding-left: 10px !important;
+        padding-right: 10px !important;
+    }
+    .header-top_section-link {
+        font-size: 10px;
+        margin: 0 5px;
+    }
+    .header-top_section-link i {
+        margin-right: 5px;
+    }
+    .header-top_section-language_link {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-size: 10px;
+        margin: 5px 0;
+    }
+    .header-top_section-language_link.active {
+        font-size: 10px;
+    }
+    .header-top_section-language_link:hover {
+        font-size: 10px;
+    }
+    .header-bottom_section {
+        padding: 0.5rem 0;
+    }
+    .header-bottom_section-logo img {
+        width: 70px;
+        margin: 0 10px;
+    }
+    .header-bottom_section-link {
+        padding: 5px 10px;
+        font-size: 12px;
+    }
+    .header-bottom_section-auth-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .header-bottom_section-auth_link {
+        padding: 5px;
+        font-size: 10px;
+        margin: 0 10px;
+    }
 
+
+    .main-container {
+        padding: 0 15px 5% 15px;
+    }
+    .hint_container {
+        padding: 10px;
+        margin: 1.5rem 0 0 0;
+    }
+    .hint {
+        font-size: 1rem;
+    }
+    .exchange_container {
+        margin-top: 2rem;
+        padding: 10px;
+        grid-template-columns: 1fr;
+        grid-gap: 0;
+    }
+    .exchange-button {
+        margin: 5px 0;
+        padding: 7px 15px;
+        font-size: 1rem;
+    }
+    .exchange-button img {
+        width: 25px;
+        height: 25px;
+        margin-right: 10px;
+    }
+    .exchange-rate_info-table {
+        border-spacing: 0 15px;
+    }
+    .exchange-rate_info-table-header_row {
+        font-size: 1rem;
+    }
+    .exchange-rate_info-table-header_give {
+        padding: 5px 0;
+    }
+    .exchange-rate_info-table-header_rate,
+    .exchange-rate_info-table-header_reserve {
+        padding: 5px 0;
+    }
+    .exchange-rate_info-table-header_button {
+        padding: 5px 0;
+    }
+    .exchange-order-button {
+        height: 25px;
+        width: 25px;
+    }
+    .exchange-order-button-text {
+        transform: translate(-50%, -50%);
+        font-size: 15px;
+    }
+    .exchange-rate_info-table-item_give {
+        font-size: 15px;
+        font-weight: 400;
+        padding: 10px 0 10px 10px;
+    }
+    .exchange-rate_info-table-item_give img {
+        width: 25px;
+        height: 25px;
+        margin-right: 10px;
+    }
+    .exchange-rate_info-table-item_rate,
+    .exchange-rate_info-table-item_reserve {
+        font-size: 12px;
+    }
+
+
+    .steps-header {
+        font-size: 22px;
+    }
+    .steps-regular {
+        font-size: 15px;
+    }
+    .steps-list_container {
+        margin-top: 1rem;
+        padding: 3px;
+        background-image: repeating-linear-gradient(to top right, rgba(85, 175, 255, 0.25) 30px, transparent 31px, transparent 35px),
+        repeating-linear-gradient(to bottom right, #000 30px, transparent 31px, transparent 35px);
+    }
+    .steps-list_item {
+        margin: 1rem 0;
+        width: 100%;
+    }
+    .steps-list_item:nth-child(odd) {
+        grid-template-columns: 60px 1fr;
+        left: 100%;
+        transform: translate(-100%, 0);
+    }
+    .steps-list_item:nth-child(even) {
+        grid-template-columns: 60px 1fr;
+        text-align: left;
+    }
+    .steps-list_item:nth-child(even) .steps-list_item-number_container {
+        order: 1 !important
+    }
+    .steps-list_item:nth-child(even) .steps-list_item-text_container{
+        order: 2 !important;
+    }
+    .steps-list_item-number_container {
+        width: 60px;
+        height: 60px;
+    }
+    .steps-list_item-number {
+        font-size: 30px;
+    }
+    .steps-list_item-text_container p {
+        font-size: 20px;
+    }
+
+
+    .history {
+        margin: 2rem 0 0 0;
+        grid-gap: 1rem;
+    }
+    .history-last_exchange_container,
+    .history-last_review_container,
+    .history-reserve_container {
+        padding: 10px;
+    }
+    .history-last_exchange_header,
+    .history-last_review_header,
+    .history-reserve_header {
+        font-size: 18px;
+        margin: 0.25rem 0 2rem 0;
+    }
+    .history-last_exchange-list_item {
+        padding: 5px 0;
+        margin: 15px 0;
+    }
+    .history-last_exchange-list_item img {
+        width: 30px;
+        height: 30px;
+        object-fit: contain;
+    }
+    .history-last_exchange-list_item img {
+        margin: 0 25px;
+    }
+    .history-last_exchange-list_item p {
+        font-size: 11px;
+    }
+    .history-last_review-list_item {
+        padding: 10px;
+        margin: 15px 0;
+    }
+    .history-last_review-list_item-user {
+        font-size: 18px;
+    }
+    .history-last_review-list_item-user i {
+        font-size: 13px;
+    }
+    .history-last_review-list_item-text {
+        font-size: 15px;
+
+    }
+    .history-reserve-list_item {
+        grid-gap: 15px;
+        padding: 8px 0;
+        margin: 15px 0;
+    }
+    .history-reserve-list_item-rate {
+        grid-gap: 10px;
+    }
+    .history-reserve-list_item-rate_from,
+    .history-reserve-list_item-rate_to {
+        font-size: 15px;
+    }
+    .history-reserve-list_item-rate_from img,
+    .history-reserve-list_item-rate_to img {
+        width: 25px;
+        height: 25px;
+        margin: 0 10px;
+    }
+    .history-reserve-list_item-reserve p {
+        font-size: 13px;
+    }
+
+
+    .order_container {
+        margin: 2rem 0 0 0;
+    }
+    .order-header {
+        padding: 10px;
+        font-size: 20px;
+        line-height: 1;
+    }
+    .order-link {
+        font-size: 20px;
+        padding: 10px 0;
+        width: 100%;
+        display: block;
+        text-align: center;
+    }
+
+
+    .footer-main_container {
+        padding: 2rem 0 0 0;
+    }
+    .footer-logo_container a img {
+        width: 70%;
+    }
+    .footer-menu_container {
+        padding: 20px 0;
+        grid-gap: 0;
+    }
+    .footer-menu-nav_item a,
+    .footer-menu-contacts_link a {
+        font-size: 15px;
+        margin: 10px 0;
+        padding: 7px 0;
+        width: 80%;
+    }
+    .footer-menu-nav_item a i,
+    .footer-menu-contacts_link a i {
+        margin-right: 0.5rem;
+    }
+    .footer-copyright {
+        font-size: 10px;
+    }
+
+
+    .exchange-form-header {
+        font-size: 22px;
+    }
+    .exchange-hint {
+        padding: 10px;
+        font-size: 13px;
+    }
+    .exchange-hint b {
+        font-size: 18px;
+    }
+    .separator {
+        width: 100%;
+    }
+    .select2 {
+        width: 100% !important;
+        height: auto !important;
+    }
+    .select2-selection {
+        padding: 7px;
+    }
+    .select-card-currency img {
+        margin: 0 12px;
+        width: 25px;
+        height: 25px;
+        object-fit: contain;
+    }
+    .select-card-currency span {
+        font-size: 15px;
+    }
+    .number-flex_container {
+        margin-left: 5px;
+    }
+    .small_label {
+        font-size: 12px;
+        margin-right: 5px;
+    }
+    .number-flex_container .custom-input {
+        width: 100% !important;
+    }
+    .custom-input {
+        padding: 5px !important;
+        font-size: 18px !important;
+        height: 100% !important;
+    }
+    .mt2 {
+        margin-top: 15px;
+    }
+    .big_label {
+        font-size: 18px;
+        margin: 10px 0;
+    }
+    .exchange-form-button {
+        margin-top: 20px;
+        padding: 8px 20px;
+        font-size: 18px;
+    }
+
+
+    .success-step {
+        font-size: 13px;
+        margin: 20px 0;
+    }
+    .success-button {
+        font-size: 16px;
+        padding: 8px 24px;
+    }
+    .success-sum {
+        font-size: 20px;
+    }
+    .success-hint {
+        font-size: 18px;
+        border: 1px solid #ce4613;
+        padding: 5px;
+        border-radius: 0.5rem;
+    }
+    .success-info {
+        padding: 7px 14px;
+        font-size: 15px;
+        border-radius: 0.5rem;
+    }
+    .success-buttons_container {
+        flex-direction: column;
+        align-items: center;
+        justify-content: start;
+    }
+    .success-button_cancel {
+        display: block;
+        width: 100%;
+        text-align: center;
+        font-size: 15px;
+        padding: 7px 0;
+        margin-bottom: 15px;
+    }
+    .success-buttons_container div {
+        width: 100%;
+    }
+    .success-button_confirm {
+        margin-left: 0;
+        margin-top: 10px;
+        font-size: 15px;
+        display: block;
+        width: 100%;
+        text-align: center;
+        padding: 7px 0;
+    }
+
+
+    .account-header {
+        font-size: 20px;
+    }
+    .account-grid_container {
+        grid-template-columns: 1fr;
+        grid-gap: 15px;
+    }
+    .account-form_container,
+    .account-history_container {
+        width: 100%;
+        padding: 25px 10px;
+    }
+    .account-form_container .form-group {
+        margin: 12px 0;
+    }
+    .account-form-button {
+        font-size: 15px;
+        padding: 8px 0;
+    }
+    .account-history-item {
+        margin: 10px 0;
+        padding: 8px 16px;
+    }
+    .account-history-item-currencies {
+        grid-template-columns: 1fr 10px 1fr;
+        grid-gap: 10px;
+    }
+    .account-history-item-currencies p {
+        font-size: 12px;
+    }
+    .account-history-item-currencies p img {
+        width: 20px;
+        height: 20px;
+        object-fit: contain;
+        margin-right: 5px;
+    }
+    .account-history-item-wallet p {
+        font-size: 14px;
+        margin: 10px 0;
+        padding: 8px 0;
+    }
+    .account-history-item-status p {
+        font-size: 14px;
+        margin: 10px 0;
+        padding: 8px 0;
+    }
+
+
+    #reviewModalLabel {
+        font-size: 18px;
+    }
+    #reviewModal .modal-body .form-group {
+        margin: 10px 0;
+    }
+    #reviewModal .modal-body .form-group input,
+    #reviewModal .modal-body .form-group textarea {
+        padding: 15px;
+    }
+    #reviewModal .modal-review-button {
+        font-size: 14px;
+        padding: 8px 0;
+    }
+    #reviewModal .modal-review-hint {
+        font-size: 15px;
+    }
 }
