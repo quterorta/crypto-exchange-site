@@ -143,7 +143,7 @@
             <p class="history-last_review_header">{{ __('Last reviews') }} <a href="#" data-bs-toggle="modal" data-bs-target="#reviewModal"><i class="fa-solid fa-circle-plus"></i></a></p>
             <div class="history-last_review-list_container">
                 @foreach($reviews as $review)
-                    <div class="history-last_review-list_item @if($review->user_id === Auth::user()->id) my-review @endif" @if($review->user_id === Auth::user()->id) title="{{ __('Its your review =)') }}" @endif>
+                    <div class="history-last_review-list_item @if(Auth::user() && $review->user_id === Auth::user()->id) my-review @endif" @if(Auth::user() && $review->user_id === Auth::user()->id) title="{{ __('Its your review =)') }}" @endif>
                         <p class="history-last_review-list_item-user">{{ $review->user->name }} <i>{{ $review->created_at }}</i></p>
                         <p class="history-last_review-list_item-text">{{ $review->text }}</p>
                     </div>
@@ -242,7 +242,11 @@
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="reviewModalLabel">{{ Auth::user()->name }}{{ __(', please leave your feedback') }}</h5>
+                @if(Auth::user())
+                    <h5 class="modal-title" id="reviewModalLabel">{{ Auth::user()->name }}{{ __(', please leave your feedback') }}</h5>
+                @else
+                    <h5 class="modal-title" id="reviewModalLabel">{{ __('Please leave your feedback') }}</h5>
+                @endif
                 <button type="button" data-bs-dismiss="modal" aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
             </div>
             <div class="modal-body">
