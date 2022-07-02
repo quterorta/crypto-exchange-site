@@ -51,7 +51,7 @@
                     </div>
                     <div class="form-group">
                         <label for="total">{{ __('Total') }}</label>
-                        <input type="number" name="total" id="total" class="form-control" placeholder="{{ __('Total') }}" value="{{ $order->total ?? '' }}">
+                        <input type="number" name="total" id="total" class="form-control" placeholder="{{ __('Total') }}" required value="{{ $order->total ?? '' }}">
                     </div>
                     <div class="form-group">
                         <label for="user_id">{{ __('User') }}</label>
