@@ -1,7 +1,7 @@
 <div class="header-top_section plr15">
     <div class="header-top_section-links_container">
         <p class="header-top_section-link"><i class="fa-regular fa-clock"></i>{{ __('We working 27/7') }}</p>
-        <a class="header-top_section-link" href="tel:+380993080701"><i class="fa-solid fa-phone"></i>+380993080701</a>
+        <a class="header-top_section-link" target="_blank" href="tg://resolve?domain=gpexchange01"><i class="fa-brands fa-telegram"></i>@gpexchange01</a>
         <a class="header-top_section-link" href="mailto:{{ $supportEmail }}"><i class="fa-regular fa-envelope"></i>{{ $supportEmail }}</a>
     </div>
     <div class="header-top_section-language_container">

@@ -77,9 +77,9 @@
             <p class="steps-header block_header">{{ __('How to make a cryptocurrency exchange on site?') }}</p>
             <p class="steps-regular">
                 {{ __('Before making an exchange, we recommend that you read the exchange instructions below. If something is not clear to you, then write to the ') }}
-                <a href="#">{{ __('online chat') }}</a>
+                <a target="_blank" href="tg://resolve?domain=gpexchange01">{{ __('online chat') }}</a>
                 {{__('to the operator during business hours or to our mail:')}}
-                <a href="">obmen@grambit.net</a>
+                <a href="mailto:{{ $supportEmail }}">{{ $supportEmail }}</a>
             </p>
         </div>
         <div class="steps-list_container">

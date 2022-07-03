@@ -856,8 +856,10 @@
     border-radius: 0.5rem;
     font-weight: 300;
     font-size: 1.2rem;
+    line-height: 1;
     background: none;
-    padding: 0.5rem 1.5rem;
+    padding: 0.6rem 1.5rem;
+    text-decoration: none;
 }
 .success-button:hover {
     background: #54ADFF;
