@@ -438,4 +438,17 @@
     #reviewModal .modal-review-hint {
         font-size: 15px;
     }
+
+
+    .order-status-container {
+        padding: 25% 0 5% 0;
+    }
+    .order-status-message {
+        font-size: 30px;
+    }
+    .order-status-link {
+        margin: 20px 0;
+        font-size: 20px;
+        padding: 10px 10%;
+    }
 }

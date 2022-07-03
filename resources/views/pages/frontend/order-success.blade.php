@@ -58,6 +58,16 @@
             </div>
         </section>
     </div>
+    <script>
+        $(document).ready(function() {
+            $('.success-button_cancel').click(function() {
+                let res = confirm('Are you sure you want to cancel your ticket?');
+                if (!res) {
+                    return false;
+                }
+            });
+        });
+    </script>
 @endsection
 
 @section('footer')@include('layouts.frontend.footer')@endsection

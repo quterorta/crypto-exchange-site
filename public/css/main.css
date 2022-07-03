@@ -117,7 +117,7 @@
 
 .main-container {
     background: #181C1F;
-    min-height: 100vh;
+    min-height: 70vh;
     padding: 0 10% 5% 10%;
     position: relative;
 }
@@ -1148,4 +1148,39 @@
 #reviewModal .modal-review-hint a:hover {
     color: #54ADFF;
     box-shadow: 0 3px 0 0 #54ADFF;
+}
+
+
+
+.order-status-container {
+    padding: 15% 5% 5% 5%;
+    text-align: center;
+    color: #54ADFF;
+    background: radial-gradient(#1E1E1F, transparent);
+}
+
+.order-status-message {
+    color: white;
+    font-size: 3rem;
+    font-weight: 200;
+    margin: 0;
+    line-height: 1.1;
+}
+
+
+.order-status-link {
+    margin: 2.5% 0;
+    display: inline-block;
+    color: #54ADFF;
+    font-weight: 300;
+    font-size: 2rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    border: 2px solid #54ADFF;
+    border-radius: 1rem;
+    padding: 0.5rem 5rem;
+}
+.order-status-link:hover {
+    background: #20262A;
+    color: #FFFFFF;
 }
