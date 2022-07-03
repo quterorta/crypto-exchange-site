@@ -96,7 +96,7 @@ class UserOrderController extends Controller
         $data->link = route('order.edit', $orderId);
 
         $email = $this->getEmail();
-        //Mail::to($email)->send(new OrderMailer($data));
+        Mail::to($email)->send(new OrderMailer($data));
 
         return redirect()->route('order-success', compact('orderId'))->withSuccess('Exchange request successfully created!');
     }
