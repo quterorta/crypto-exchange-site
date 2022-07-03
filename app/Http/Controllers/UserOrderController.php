@@ -90,8 +90,9 @@ class UserOrderController extends Controller
         $orderId = $order->id;
         $data = new stdClass();
         $data->name = $user->name;
-        $data->email = $user->email;
-        $data->phone = $user->phone;
+        $data->email = $order->email;
+        $data->phone = $order->phone;
+        $data->telegram = $order->telegram;
         $data->order = $orderId;
         $data->link = route('order.edit', $orderId);
 
