@@ -617,3 +617,37 @@
     max-width: 70vw !important;
     text-align: center;
 }
+
+
+
+.admin-pagination .pagination {
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.admin-pagination .pagination {
+    justify-content: center;
+}
+
+.admin-pagination .pagination li {
+    margin: 0 0.5rem;
+    border: 1px solid #ce4613;
+    border-radius: 0.25rem;
+    background: #ce4613;
+    color: white;
+    padding: 0.5rem 0.75rem;
+    line-height: 1;
+}
+.admin-pagination .pagination li.disabled {
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.5);
+    color: black;
+}
+.admin-pagination .pagination li.active {
+    border: 1px solid rgba(0, 0, 0, 1);
+    color: black;
+}
+.admin-pagination .pagination li a {
+    color: white;
+    text-decoration: none;
+}

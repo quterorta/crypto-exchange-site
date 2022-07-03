@@ -73,12 +73,24 @@ class UserFrontendController extends Controller
     public function update(Request $request)
     {
         $user = Auth::user();
-        $user->forceFill([
-            'name' => $request->name,
-            'email' => $request->email,
-            'phone' => $request->phone,
-            'wallet' => $request->wallet
-        ])->save();
+
+        if ($request->name) {
+            $user->name = $request->name;
+        }
+        if ($request->email) {
+            $user->email = $request->email;
+        }
+        if ($request->phone) {
+            $user->phone = $request->phone;
+        }
+        if ($request->wallet) {
+            $user->wallet = $request->wallet;
+        }
+        if ($request->telegram) {
+            $user->telegram = $request->telegram;
+        }
+
+        $user->save();
 
         return redirect()->route('account')->withSuccess('Your account information saved!');
     }

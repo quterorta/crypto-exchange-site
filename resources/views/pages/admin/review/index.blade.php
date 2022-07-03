@@ -49,6 +49,9 @@
                     </div>
                 @endforeach
             </div>
+            @if ($reviews)
+                {{ $reviews->links('blocks.pagination.admin-pagination') }}
+            @endif
         </section>
     </section>
 @endsection

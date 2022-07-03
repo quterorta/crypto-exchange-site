@@ -58,6 +58,9 @@
                     </div>
                 @endforeach
             </div>
+            @if ($users)
+                {{ $users->links('blocks.pagination.admin-pagination') }}
+            @endif
         </section>
     </section>
 @endsection

@@ -35,7 +35,7 @@ class OrderController extends Controller
      */
     public function index()
     {
-        $orders = Order::paginate(20);
+        $orders = Order::orderByDesc('created_at')->paginate(20);
         $titleMany = $this->titleMany;
         $title = $this->title;
         return $this->responseFactory->view(
@@ -86,14 +86,21 @@ class OrderController extends Controller
         $toImage = $to->image;
 
         $user = User::find($request->user_id);
-        $email = $user->email ? $user->email : 'User dont have email';
-        $phone = $user->phone ? $user->phone : 'User dont have phone';
-        $wallet = $request->wallet ? $request->wallet : $user->wallet ? $user->wallet : 'User dont have wallet';
+        $email = $user->email ? $user->email : $request->email;
+        $phone = $user->phone ? $user->phone : $request->phone;
+        $telegram = $user->telegram ? $user->telegram : $request->telegram;
+        $wallet = $user->wallet ? $user->wallet : $request->wallet;
+        if ($request->wallet) {
+            $wallet = $request->wallet;
+        } else if ($user->wallet) {
+            $wallet = $user->wallet;
+        }
 
         $order = Order::create([
             'user_id' => $request->user_id,
             'email' => $email,
             'phone' => $phone,
+            'telegram' => $telegram,
             'wallet' => $wallet,
             'from_currency_id' => $fromId,
             'fromCode' => $fromCode,
@@ -168,6 +175,7 @@ class OrderController extends Controller
             'phone' => $request->phone,
             'email' => $request->email,
             'wallet' => $request->wallet,
+            'telegram' => $request->telegram,
             'from_currency_id' => $fromId,
             'fromCode' => $fromCode,
             'fromImage' => $fromImage,

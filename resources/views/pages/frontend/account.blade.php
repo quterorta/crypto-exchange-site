@@ -32,11 +32,15 @@
                         </div>
                         <div class="form-group">
                             <label for="phone">{{ __('Phone') }}</label>
-                            <input type="tel" name="phone" id="phone" class="form-control" required placeholder="{{ __('Phone') }}" value="{{ $user->phone ?? '' }}">
+                            <input type="tel" name="phone" id="phone" class="form-control" placeholder="{{ __('Phone') }}" value="{{ $user->phone ?? '' }}">
+                        </div>
+                        <div class="form-group">
+                            <label for="telegram">{{ __('Telegram') }}</label>
+                            <input type="text" name="telegram" id="telegram" class="form-control" placeholder="{{ __('Telegram') }}" value="{{ $user->telegram ?? '' }}">
                         </div>
                         <div class="form-group">
                             <label for="wallet">{{ __('Default Wallet') }}</label>
-                            <input type="text" name="wallet" id="wallet" class="form-control" required placeholder="{{ __('Default Wallet') }}" value="{{ $user->wallet ?? '' }}">
+                            <input type="text" name="wallet" id="wallet" class="form-control" placeholder="{{ __('Default Wallet') }}" value="{{ $user->wallet ?? '' }}">
                         </div>
                         <div class="form-group">
                             <button type="submit" class="account-form-button">{{ __('Save account information') }}</button>
@@ -48,9 +52,9 @@
                     @foreach($user->orders as $order)
                         <div class="account-history-item">
                             <div class="account-history-item-currencies">
-                                <p><img src="{{ Storage::url($order->fromImage) }}" alt=""> {{ $order->sum }} {{ $order->fromCode }}</p>
+                                <p><img src="{{ Storage::url($order->fromImage) }}" alt=""> {{ round($order->sum, 3) }} {{ $order->fromCode }}</p>
                                 <hr>
-                                <p><img src="{{ Storage::url($order->toImage) }}" alt=""> {{ $order->total }} {{ $order->toCode }}</p>
+                                <p><img src="{{ Storage::url($order->toImage) }}" alt=""> {{ round($order->total, 3) }} {{ $order->toCode }}</p>
                             </div>
                             <div class="account-history-item-wallet">
                                 <p>{{ __('Wallet:') }} {{ $order->wallet }}</p>

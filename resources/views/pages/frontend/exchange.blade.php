@@ -52,6 +52,10 @@
                 <label for="phone" class="small_label mt2">{{ __('Phone') }}</label>
                 <input type="tel" name="phone" id="phone" class="form-control custom-input" required value="{{ $user->phone ?? '' }}">
             </div>
+            <div class="form-group small">
+                <label for="telegram" class="small_label mt2">{{ __('Telegram') }}</label>
+                <input type="text" name="telegram" id="telegram" class="form-control custom-input" required value="{{ $user->telegram ?? '' }}">
+            </div>
             <div class="form-group">
                 <button class="exchange-form-button" type="submit">{{ __('Apply') }}</button>
             </div>

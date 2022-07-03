@@ -117,7 +117,7 @@
 
 .main-container {
     background: #181C1F;
-    min-height: 100vh;
+    min-height: 70vh;
     padding: 0 10% 5% 10%;
     position: relative;
 }
@@ -257,6 +257,7 @@
 
 
 .exchange-rate_info {
+    position: relative;
     color: white;
     box-shadow: 0 1px 0 0 rgba(255, 255, 255, 0.2), 0 -1px 0 0 rgba(255, 255, 255, 0.2);
 }
@@ -265,11 +266,15 @@
     box-shadow: 0 1px 0 0 #54ADFF, 0 -1px 0 0 #54ADFF;
 }
 
-
-.exchange-rate_info-table-item_give {
+.exchange-rate_info-table-item_give a {
     font-size: 1.35rem;
     font-weight: 400;
     padding: 0.5rem 0 0.5rem 1.5rem;
+    color: white;
+    text-decoration: none;
+}
+.exchange-rate_info-table-item_give a:hover {
+    color: #54ADFF;
 }
 .exchange-rate_info-table-item_give img {
     width: 3rem;
@@ -851,8 +856,10 @@
     border-radius: 0.5rem;
     font-weight: 300;
     font-size: 1.2rem;
+    line-height: 1;
     background: none;
-    padding: 0.5rem 1.5rem;
+    padding: 0.6rem 1.5rem;
+    text-decoration: none;
 }
 .success-button:hover {
     background: #54ADFF;
@@ -1141,4 +1148,39 @@
 #reviewModal .modal-review-hint a:hover {
     color: #54ADFF;
     box-shadow: 0 3px 0 0 #54ADFF;
+}
+
+
+
+.order-status-container {
+    padding: 15% 5% 5% 5%;
+    text-align: center;
+    color: #54ADFF;
+    background: radial-gradient(#1E1E1F, transparent);
+}
+
+.order-status-message {
+    color: white;
+    font-size: 3rem;
+    font-weight: 200;
+    margin: 0;
+    line-height: 1.1;
+}
+
+
+.order-status-link {
+    margin: 2.5% 0;
+    display: inline-block;
+    color: #54ADFF;
+    font-weight: 300;
+    font-size: 2rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    border: 2px solid #54ADFF;
+    border-radius: 1rem;
+    padding: 0.5rem 5rem;
+}
+.order-status-link:hover {
+    background: #20262A;
+    color: #FFFFFF;
 }

@@ -110,7 +110,6 @@ class CurrencyRateController extends Controller
         }
 
         $currencyRate->rate = $this->currencyRateModel->getRate($currencyFrom, $currencyTo);
-
         $currencyRate->save();
 
         return redirect()->route('currency-rate.index')->withSuccess('Currency rate changed!');

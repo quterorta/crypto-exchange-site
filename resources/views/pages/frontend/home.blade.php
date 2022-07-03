@@ -36,7 +36,11 @@
                         @if(is_iterable($currency->getExchangeRates()))
                             @foreach($currency->getExchangeRates() as $cur)
                                 <tr class="exchange-rate_info-table-item_row exchange-rate_info" data-parent-currency="{{ $cur['from'] }}">
-                                    <td class="exchange-rate_info-table-item_give"><img src="{{ Storage::url($cur['toImage']) }}" alt="">{{ $cur['to'] }}</td>
+                                    <td class="exchange-rate_info-table-item_give">
+                                        <a href="{{ route('exchange') }}?give={{ $cur['from'] }}&receive={{ $cur['to'] }}">
+                                            <img src="{{ Storage::url($cur['toImage']) }}" alt="">{{ $cur['to'] }}
+                                        </a>
+                                    </td>
                                     <td class="exchange-rate_info-table-item_rate">{{ round($cur['rate'], 5) }}</td>
                                     <td class="exchange-rate_info-table-item_reserve">{{ $cur['reserve'] }}</td>
                                     <td class="exchange-rate_info-table-item_button">
@@ -48,12 +52,16 @@
                             @endforeach
                         @else
                             <tr class="exchange-rate_info-table-item_row exchange-rate_info" data-parent-currency="{{ $cur['from'] }}">
-                                <td class="exchange-rate_info-table-item_give"><img src="{{ Storage::url($cur['toImage']) }}" alt="">{{ $cur['to'] }}</td>
+                                <td class="exchange-rate_info-table-item_give">
+                                    <a href="{{ route('exchange') }}?give={{ $cur['from'] }}&receive={{ $cur['to'] }}">
+                                        <img src="{{ Storage::url($cur['toImage']) }}" alt="">{{ $cur['to'] }}
+                                    </a>
+                                </td>
                                 <td class="exchange-rate_info-table-item_rate">{{ round($cur['rate'], 5) }}</td>
                                 <td class="exchange-rate_info-table-item_reserve">{{ $cur['reserve'] }}</td>
                                 <td class="exchange-rate_info-table-item_button">
                                     <button type="button" class="exchange-order-button">
-                                        <span class="exchange-order-button-text">+</span>
+                                        <a href="{{ route('exchange') }}?give={{ $cur['from'] }}&receive={{ $cur['to'] }}" class="exchange-order-button-text" style="text-decoration: none;">+</a>
                                     </button>
                                 </td>
                             </tr>
@@ -69,9 +77,9 @@
             <p class="steps-header block_header">{{ __('How to make a cryptocurrency exchange on site?') }}</p>
             <p class="steps-regular">
                 {{ __('Before making an exchange, we recommend that you read the exchange instructions below. If something is not clear to you, then write to the ') }}
-                <a href="#">{{ __('online chat') }}</a>
+                <a target="_blank" href="tg://resolve?domain=gpexchange01">{{ __('online chat') }}</a>
                 {{__('to the operator during business hours or to our mail:')}}
-                <a href="">obmen@grambit.net</a>
+                <a href="mailto:{{ $supportEmail }}">{{ $supportEmail }}</a>
             </p>
         </div>
         <div class="steps-list_container">

@@ -10,9 +10,18 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
 use stdClass;
+use Illuminate\Routing\ResponseFactory;
 
 class UserOrderController extends Controller
 {
+    private $responseFactory;
+
+    public function __construct(
+        ResponseFactory $responseFactory
+    ) {
+        $this->responseFactory = $responseFactory;
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -74,19 +83,21 @@ class UserOrderController extends Controller
             'wallet' => $request->wallet,
             'email' => $request->email,
             'phone' => $request->phone,
+            'telegram' => $request->telegram,
             'status' => $status,
         ]);
 
         $orderId = $order->id;
         $data = new stdClass();
         $data->name = $user->name;
-        $data->email = $user->email;
-        $data->phone = $user->phone;
+        $data->email = $order->email;
+        $data->phone = $order->phone;
+        $data->telegram = $order->telegram;
         $data->order = $orderId;
         $data->link = route('order.edit', $orderId);
 
         $email = $this->getEmail();
-        //Mail::to($email)->send(new OrderMailer($data));
+        Mail::to($email)->send(new OrderMailer($data));
 
         return redirect()->route('order-success', compact('orderId'))->withSuccess('Exchange request successfully created!');
     }
@@ -139,5 +150,67 @@ class UserOrderController extends Controller
     public function getEmail()
     {
         return env('ADMIN_MAIL_FOR_CONTACTS');
+    }
+
+    public function cancelOrder($orderId)
+    {
+        if (!Order::find($orderId)->exists()) {
+            $message = 'Ticket #'.$orderId.' not fined!';
+            return $this->responseFactory->view(
+                'pages.frontend.order-status',
+                compact('orderId', 'message')
+            );
+        }
+        $order = Order::find($orderId);
+        $user = Auth::user() ?? User::where('name', 'Guest')->first();
+        if ($order->user_id !== $user->id) {
+            $message = 'You can\'t cancel someone else\'s application!';
+            return $this->responseFactory->view(
+                'pages.frontend.order-status',
+                compact('orderId', 'message')
+            );
+        }
+
+        $order->status = 0;
+
+        $order->save();
+
+        $message = 'Your ticket #'.$orderId.' canceled!';
+
+        return $this->responseFactory->view(
+            'pages.frontend.order-status',
+            compact('orderId', 'message')
+        );
+    }
+
+    public function confirmOrder($orderId)
+    {
+        if (!Order::find($orderId)->exists()) {
+            $message = 'Ticket #'.$orderId.' not fined!';
+            return $this->responseFactory->view(
+                'pages.frontend.order-status',
+                compact('orderId', 'message')
+            );
+        }
+        $order = Order::find($orderId);
+        $user = Auth::user() ?? User::where('name', 'Guest')->first();
+        if ($order->user_id !== $user->id) {
+            $message = 'You can\'t cancel someone else\'s application!';
+            return $this->responseFactory->view(
+                'pages.frontend.order-status',
+                compact('orderId', 'message')
+            );
+        }
+
+        $order->status = 4;
+
+        $order->save();
+
+        $message = 'Thank you for the ticket #'.$orderId.' fee. Wait for confirmation of payment from our side.';
+
+        return $this->responseFactory->view(
+            'pages.frontend.order-status',
+            compact('orderId', 'message')
+        );
     }
 }

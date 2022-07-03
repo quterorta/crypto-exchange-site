@@ -23,7 +23,7 @@
                 <br>
                 {{ __('To clarify payment details and details, tell the operator the application number and please go through a simple verification.') }}
             </p>
-            <button class="success-button" type="button"><i class="fa-solid fa-headset"></i> {{ __('Online chat') }}</button>
+            <a class="success-button" target="_blank" href="tg://resolve?domain=gpexchange01"><i class="fa-solid fa-headset"></i> {{ __('Online chat') }}</a>
             <p class="success-step">
                 {{ __('Step 2.') }} {{ __('Confirm payment.') }}
                 <br>
@@ -52,12 +52,22 @@
             <div class="success-buttons_container">
                 <a class="success-button_cancel" href="{{ route('user-order.cancel', $order->id) }}">{{ __('Cancel order') }}</a>
                 <div>
-                    <button class="success-button" type="button"><i class="fa-solid fa-headset"></i> {{ __('Online chat') }}</button>
+                    <a class="success-button" target="_blank" href="tg://resolve?domain=gpexchange01"><i class="fa-solid fa-headset"></i> {{ __('Online chat') }}</a>
                     <a class="success-button_confirm" href="{{ route('user-order.confirm-payment', $order->id) }}">{{ __('I paid for the application') }}</a>
                 </div>
             </div>
         </section>
     </div>
+    <script>
+        $(document).ready(function() {
+            $('.success-button_cancel').click(function() {
+                let res = confirm('Are you sure you want to cancel your ticket?');
+                if (!res) {
+                    return false;
+                }
+            });
+        });
+    </script>
 @endsection
 
 @section('footer')@include('layouts.frontend.footer')@endsection

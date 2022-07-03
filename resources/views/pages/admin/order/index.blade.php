@@ -22,6 +22,9 @@
             <div class="admin-items-container g5">
                 @foreach($orders as $order)
                     <div class="admin-item">
+                        <a class="admin-item-header-link" href="{{ route('order.edit', $order->id) }}">
+                            Order #{{ $order->id }}
+                        </a>
                         <a class="admin-item-order-link" href="{{ route('order.edit', $order->id) }}">
                             <img src="{{ Storage::url($order->fromImage) }}" alt="">{{ $order->fromCode }} -
                             <img src="{{ Storage::url($order->toImage) }}" alt="">{{ $order->toCode }}
@@ -67,6 +70,9 @@
                     </div>
                 @endforeach
             </div>
+            @if ($orders)
+            {{ $orders->links('blocks.pagination.admin-pagination') }}
+            @endif
         </section>
     </section>
 @endsection

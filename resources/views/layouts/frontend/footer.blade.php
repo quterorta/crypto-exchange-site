@@ -25,7 +25,7 @@
                     <a href="#" class="disabled-link"><i class="fa-regular fa-clock"></i>{{ __('We working 27/7') }}</a>
                 </li>
                 <li class="footer-menu-contacts_link">
-                    <a href="tel:+380993080701"><i class="fa-solid fa-phone"></i>+380993080701</a>
+                    <a target="_blank" href="tg://resolve?domain=gpexchange01"><i class="fa-brands fa-telegram"></i>@gpexchange01</a>
                 </li>
                 <li class="footer-menu-contacts_link">
                     <a href="mailto:{{ $supportEmail }}"><i class="fa-regular fa-envelope"></i>{{ $supportEmail }}</a>

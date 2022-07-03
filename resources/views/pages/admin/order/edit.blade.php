@@ -75,6 +75,10 @@
                         <input type="tel" name="phone" id="phone" class="form-control" placeholder="{{ __('Phone') }}" required value="{{ $order->phone ?? '' }}">
                     </div>
                     <div class="form-group">
+                        <label for="telegram">{{ __('Telegram') }}</label>
+                        <input type="text" name="telegram" id="telegram" class="form-control" placeholder="{{ __('Telegram') }}" required value="{{ $order->telegram ?? '' }}">
+                    </div>
+                    <div class="form-group">
                         <label for="status">{{ __('Status') }}</label>
                         <select name="status" id="status" class="form-select" required>
                             <option value=null disabled>--- {{ __('Select Status') }} ---</option>

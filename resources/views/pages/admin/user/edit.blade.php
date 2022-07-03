@@ -37,6 +37,19 @@
                         <label for="email">{{ __('Email') }}</label>
                         <input type="email" name="email" id="email" class="form-control" placeholder="{{ __('Email') }}" value="{{ $user->email }}" required>
                     </div>
+
+                    <div class="form-group">
+                        <label for="phone">{{ __('Phone') }}</label>
+                        <input type="tel" name="phone" id="phone" class="form-control" placeholder="{{ __('Phone') }}" required value="{{ $user->phone }}">
+                    </div>
+                    <div class="form-group">
+                        <label for="telegram">{{ __('Telegram') }}</label>
+                        <input type="text" name="telegram" id="telegram" class="form-control" placeholder="{{ __('Telegram') }}" required value="{{ $user->telegram }}">
+                    </div>
+                    <div class="form-group">
+                        <label for="wallet">{{ __('Wallet') }}</label>
+                        <input type="text" name="wallet" id="wallet" class="form-control" placeholder="{{ __('Wallet') }}" required value="{{ $user->wallet }}">
+                    </div>
                     <div class="form-group">
                         <label for="password">{{ __('Change Password (not necessary)') }}</label>
                         <input type="text" name="password" id="password" class="form-control" placeholder="{{ __('Change Password') }}">

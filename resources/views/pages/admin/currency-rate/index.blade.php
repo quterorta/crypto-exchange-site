@@ -56,6 +56,9 @@
                     </div>
                 @endforeach
             </div>
+            @if ($currencyRates)
+                {{ $currencyRates->links('blocks.pagination.admin-pagination') }}
+            @endif
         </section>
     </section>
 @endsection
