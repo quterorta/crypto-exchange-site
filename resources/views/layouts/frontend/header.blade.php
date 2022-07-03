@@ -6,7 +6,6 @@
     </div>
     <div class="header-top_section-language_container">
         <a href="" class="header-top_section-language_link active">EN</a>
-        <a href="" class="header-top_section-language_link">RO</a>
         <a href="" class="header-top_section-language_link">RU</a>
     </div>
 </div>
