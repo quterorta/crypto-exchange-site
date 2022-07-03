@@ -37,9 +37,9 @@
     <script src="/js/main.js"></script>
     <script src="/js/delete-btn.js"></script>
     <script src="/js/select2-init.js"></script>
-    <script src="/js/image-uploader.js"></script>
-    <script src="/js/slugify.js"></script>
-    <script src="/js/favorite-products.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
+    <script src="/js/translate.js"></script>
+    <script src="https://translate.google.com/translate_a/element.js?cb=TranslateInit"></script>
     @yield('additional-css')
     @yield('additional-script')
 </head>

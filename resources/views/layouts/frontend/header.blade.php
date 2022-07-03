@@ -5,8 +5,8 @@
         <a class="header-top_section-link" href="mailto:{{ $supportEmail }}"><i class="fa-regular fa-envelope"></i>{{ $supportEmail }}</a>
     </div>
     <div class="header-top_section-language_container">
-        <a href="" class="header-top_section-language_link active">EN</a>
-        <a href="" class="header-top_section-language_link">RU</a>
+        <a href="#" class="header-top_section-language_link" title="en" data-google-lang="en">EN</a>
+        <a href="#" class="header-top_section-language_link" title="ru" data-google-lang="ru">RU</a>
     </div>
 </div>
 <div class="header-bottom_section plr15">
@@ -22,7 +22,7 @@
     <div class="header-bottom_section-auth-container">
         @if(!Auth::user())
             <a href="{{ route('login') }}" class="header-bottom_section-auth_link">{{ __('Login') }}</a>
-            <a href="{{ route('register') }}" class="header-bottom_section-auth_link">{{ __('Register') }}</a>
+            <a href="{{ route('register') }}" class="header-bottom_section-auth_link">{{ __('Registration') }}</a>
         @else
             <a href="{{ route('account') }}" class="header-bottom_section-auth_link">{{ __('Account') }}</a>
             <a href="{{ route('logout') }}" class="header-bottom_section-auth_link" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
