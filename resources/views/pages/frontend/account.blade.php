@@ -32,11 +32,15 @@
                         </div>
                         <div class="form-group">
                             <label for="phone">{{ __('Phone') }}</label>
-                            <input type="tel" name="phone" id="phone" class="form-control" required placeholder="{{ __('Phone') }}" value="{{ $user->phone ?? '' }}">
+                            <input type="tel" name="phone" id="phone" class="form-control" placeholder="{{ __('Phone') }}" value="{{ $user->phone ?? '' }}">
+                        </div>
+                        <div class="form-group">
+                            <label for="telegram">{{ __('Telegram') }}</label>
+                            <input type="text" name="telegram" id="telegram" class="form-control" placeholder="{{ __('Telegram') }}" value="{{ $user->telegram ?? '' }}">
                         </div>
                         <div class="form-group">
                             <label for="wallet">{{ __('Default Wallet') }}</label>
-                            <input type="text" name="wallet" id="wallet" class="form-control" required placeholder="{{ __('Default Wallet') }}" value="{{ $user->wallet ?? '' }}">
+                            <input type="text" name="wallet" id="wallet" class="form-control" placeholder="{{ __('Default Wallet') }}" value="{{ $user->wallet ?? '' }}">
                         </div>
                         <div class="form-group">
                             <button type="submit" class="account-form-button">{{ __('Save account information') }}</button>

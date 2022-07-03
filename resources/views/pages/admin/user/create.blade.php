@@ -37,6 +37,18 @@
                         <input type="email" name="email" id="email" class="form-control" placeholder="{{ __('Email') }}" required>
                     </div>
                     <div class="form-group">
+                        <label for="phone">{{ __('Phone') }}</label>
+                        <input type="tel" name="phone" id="phone" class="form-control" placeholder="{{ __('Phone') }}" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="telegram">{{ __('Telegram') }}</label>
+                        <input type="text" name="telegram" id="telegram" class="form-control" placeholder="{{ __('Telegram') }}" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="wallet">{{ __('Wallet') }}</label>
+                        <input type="text" name="wallet" id="wallet" class="form-control" placeholder="{{ __('Wallet') }}" required>
+                    </div>
+                    <div class="form-group">
                         <label for="password">{{ __('Password') }}</label>
                         <input type="text" name="password" id="password" class="form-control" placeholder="{{ __('Password') }}" required>
                     </div>

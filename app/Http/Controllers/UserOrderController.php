@@ -74,6 +74,7 @@ class UserOrderController extends Controller
             'wallet' => $request->wallet,
             'email' => $request->email,
             'phone' => $request->phone,
+            'telegram' => $request->telegram,
             'status' => $status,
         ]);
 

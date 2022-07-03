@@ -67,8 +67,13 @@ class UserController extends Controller
         $user = User::create([
             'name' => $request->name,
             'email' => $request->email,
-            'password' => Hash::make($request->password),
+            'password' => Hash::make($request->password)
         ]);
+
+        $user->phone = $request->phone;
+        $user->wallet = $request->wallet;
+        $user->telegram = $request->telegram;
+        $user->save();
 
         $user->assignRole('user');
 
@@ -114,9 +119,14 @@ class UserController extends Controller
     {
         $user->name = $request->name;
         $user->email = $request->email;
+        $user->phone = $request->phone;
+        $user->wallet = $request->wallet;
+        $user->telegram = $request->telegram;
         if ($request->password && $request->password != '') {
             $user->password = Hash::make($request->password);
         }
+
+        $user->save();
 
         return redirect()->route('user.index')->withSuccess('User has been changed!');
     }
