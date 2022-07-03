@@ -16,6 +16,7 @@ class AdminController extends Controller
     public const RATE_WITH_SYMBOLS_API_URL = 'https://api.binance.com/api/v3/ticker/price?symbols=';
     public const CURRENCIES_API_URL = 'https://api.coingecko.com/api/v3/exchange_rates';
     public const SEARCH_CURRENCIES_API_URL = 'https://api.coingecko.com/api/v3/search';
+    public const BIT_PAY_API_URL = 'https://bitpay.com/rates/';
     public const OPEN_ARRAY_BRACKET = '%5B';
     public const CLOSE_ARRAY_BRACKET = '%5D';
     public const QUOTES = '%22';
