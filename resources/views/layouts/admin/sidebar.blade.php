@@ -7,5 +7,4 @@
         <li><a class="admin-sidebar-link" href="{{ route('review.index') }}"><i class="fa-solid fa-comment"></i><br>{{ __('Reviews') }}</a></li>
         <li><a class="admin-sidebar-link" href="{{ route('user.index') }}"><i class="fa-solid fa-user"></i><br>{{ __('Users') }}</a></li>
     </ul>
-    <a class="admin-sidebar-link admin-sidebar-copyright" target="_blank" rel="nofollow" href="https://moldstarter.md">ms</a>
 </div>
